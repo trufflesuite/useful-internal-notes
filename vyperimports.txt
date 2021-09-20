@@ -1,0 +1,52 @@
+How do Vyper imports work?
+
+*must* start at the beginning of a line
+must stay within a single line... however note that a backslash before a newline
+causes the line to continue!  [The newline is then treated as whitespace.]
+
+no, backslashes do not allow you to interject a comment :P
+
+syntax:
+
+import path as alias
+from path1 import path2
+from path1 import path2 as alias
+
+Paths use dots as separators (though see below); slashes are not allowed.
+path2 may not contain dots.
+path1 may contain leading dots (discussed below).
+
+NOTE: THERE MAY BE WHITESPACE BEFORE AND AFTER DOTS!
+
+Bult-in interfaces:
+from vyper.interfaces import ERC20
+from vyper.interfaces import ERC721
+[currently; may be more in future, but may assume they'll all be in
+vyper.interfaces]
+
+Path processing:
+
+Dots, other than at the beginning of path1, are converted to slashes.
+Dots are not allowed in path2.
+A slash is inserted between path1 and path2.
+If there are n dots at the beginning of path1, they are treated as follows:
+0: ""
+1: "./"
+n>1: "../", n-1 times
+
+Path resolution:
+In the JSON case, interfaces is checked before sources.
+But if there's ambiguity at that point, it'll fail!
+So we should try .json before .vy for our purposes.
+
+Order to try files:
+./path.json
+project_root/path.json [skipped if path is explicitly relative]
+./path.vy
+project_root/path.vy   [skipped if path is explicitly relative]
+
+In non-JSON mode, project root is working directory if not explicitly set with
+-p option.
+In JSON mode, project root is "/", but we'll ignore this and just let FS
+handle things by treating absolute things as relative to the contracts
+directory.

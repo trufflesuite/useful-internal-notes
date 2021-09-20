@@ -1,0 +1,45 @@
+nodeType is called name instead.
+each node has only the following fields:
+atributes, children, id, name, src
+
+attributes is where all the non-children info go.
+so e.g. a function's name is under node.attributes.name, not node.name
+similarly for contracts
+(if we wanted to support legacy ASTs for stacktracing, which would certainly be
+doable)
+
+children is always an array, even when there are multiple *sorts* of children
+and thus this is inappropriate :-/  [e.g., for a function call, both the
+function being called, and the arguments to it, are all just children]
+
+linearizedBaseContracts, scope, referencedDeclaration are all present.
+This helps a lot, especially scope.
+so, variable-tracking should be possible and scoping should be possible.
+
+There are no (or rarely??) typeDescriptions; types seem to just be given as
+type strings, so we'd have to parse those.  (There are *some* typeDescriptions
+but not clear on when... only for argumentTypes, it seems??  That's not useful,
+unfortunately :-/ (not used for parameter declarations))
+
+There is type info on expression nodes, thankfully, not just variable
+declaration.  (Types go in the "type" attribute.)
+
+In short: Decoding might be kind of a pain, due to the need to parse type
+strings, but it would be doable.  I guess we'd store mapped paths by type string
+rather than identifier?  (Hm, could be a problem for user-defined types.)
+(No, it wouldn't be, because all we care about is that a struct is distinct
+from its members.)
+(Note that parsing type strings would likely only be needed for handling index
+accesses and such, as more complex type declarations would probably have the
+relevant info in children and we could use that instead, much like we already
+do.)
+In short in short: Possibly doable, but likely a pain and not worth the effort.
+OH WAIT NO -- there's actually a big problem with structs, because we need to
+look up the allocation by ID when doing mapped paths, which we won't have.  Oh
+well.
+
+In short for real: Doable, except for mapping keys (because of structs).
+
+Return-value decoding ought to be possible though, if only via the ABI.
+(I mean, duh.)  Likely there would be enough type info present to do more than
+that?  However, I'm not going to look into this right now.

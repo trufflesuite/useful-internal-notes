@@ -1,0 +1,104 @@
+Precompiles don't use the ABI!
+[Also note: All of these, if they revert, will consume all available gas >_> ]
+
+#1: ecrecover; added in Frontier
+[supported by Solidity and Vyper]
+
+TAKES:
+A bytes32 and three 256-bit unsigned integers. These are just in a row, so
+matching the ABI,
+But:
+*. anything additional is ignored; there's no check
+*. final zeroes can be truncated; we assume 0 past end of input
+
+RETURNS:
+An address.  Right-padded w/in a 32-byte word, so matches the ABI.
+But:
+If the input was invalid, returns empty output, rather than zero address or
+reverting.
+Invalid input includes if either of the last two numbers are too large, or if
+the first number is anything other than 27 or 28(!).  So the first number can
+actually just be treated as a uint8, rather than uint256.
+
+#2, #3: sha256 & ripemd160; added in Frontier
+[supported by Solidity; Vyper only supports sha256]
+
+TAKES: A bytestring.  Takes it completely raw, not via the ABI.
+
+RETURNS: #2 returns a bytes32, #3 returns a bytes20.  The former matches the
+ABI, but the latter is right-aligned within a 32-byte word (i.e., it would match
+the ABI if we thought of it as a uint160.)
+
+#4: identity; added in Frontier
+[not directly supported by Solidity or Vyper for obvious reasons]
+
+It's the identity.  It takes and returns arbitrary bytestrings.  So arguably
+doesn't match the ABI.  But of course, on ABI-encoded data, it is after all
+still the identity, so one could argue that this restriction of it does. :P
+
+#5: modular exponentiation; added in Byzantium
+[not supported by Solidity or Vyper]
+
+TAKES:
+Three arbitrary-sized (well, not quite) unsigned integers.  NOT via the ABI!  I
+mean, the ABI doesn't support those, but it's easy to imagine extending it to
+do so.
+Format: First come the lengths of the arguments (as 256-bit unsigned integers),
+in bytes, then the arguments themselves (big-endian).  Stuff past end is
+dropped, also there's zero-filling.
+Note: Because the length has to fit in 32 bits, it's not actually arbitrary
+size.  Instead numbers must be less than 2^(8*(2^256-1)).
+
+RETURNS:
+An arbitrary-sized (again, not quite) integer.  NOT via the ABI.
+Format: Returned NOT via the above format, but rather as a raw integer of length
+equal to the length of the modulus argument!
+
+#6, #7: alt_bn128 addition and scalar multiplication; added in Byzantium
+[not supported by Solidity, but supported by Vyper!]
+[Vyper does 512-bit as uint256[2]]
+
+TAKES:
+Two unsigned integers; for #6 they're both 512-bit, while for #7 the first is
+512-bit and the second is 256-bit.  NOT via the ABI, once again, although
+probably as close as you can get -- it's just the one then the other.  Once
+again extra bytes are allowed and there's zero-filling.
+
+RETURNS:
+A 512-bit unsigned integer.  Not via ABI obviously, though it's by itself, which
+is as close as you can get.  Note that it reverts if various preconditions
+aren't met.
+
+#8: alt_bn128 pairing check
+[not directly supported by Solidity or Vyper]
+
+TAKES:
+An arbitrary-length array of pairs of 512-bit and 1024-bit unsigned integers.
+NOT via the ABI!  (I mean, the ABI doesn't include those, but...) Instead, it's
+just alternation between the 512-bit uints and the 1024-bit uints.  (There
+isn't any padding to 1024 bit boundaries or anything.)  The number of them is
+not given explicitly!  It's determined by the input length.  There is no
+zero-filling, nor are extra bytes allowed!
+
+RETURNS:
+A boolean.  It's padded on the left to a full word, so it's via the ABI.
+Also, if preconditions aren't met -- either the input length isn't a multiple of
+192 bytes, or if the numbers themselves don't meet certain preconditions -- it
+reverts.
+
+#9: BLAKE2 compression function F; added in Istanbul
+[not supported by Solidity or Vyper]
+
+TAKES:
+A 32-bit unsigned integer; an array of 8 8-byte bytestrings;
+an array of 16 8-byte bytestrings; two 8-byte bytestrings;
+and a boolean.
+NOT as ABI.  Instead it's just a straight concatenation of all the inputs, the
+arrays being encoded as straight concatenations of all the inputs.
+The boolean is a single byte and should be either 1 or 0.
+
+Returns:
+An array of 8 8-byte bytestrings.
+NOT as ABI; note same as above!
+Note that it reverts if the input length isn't 213 bytes, or if the boolean is
+neither 0 nor 1.

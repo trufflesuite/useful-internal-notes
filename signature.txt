@@ -1,0 +1,45 @@
+library signatures:
+
+Libraries use old-style signatures, meaning that structs are given as
+ContractName.StructName
+rather than as a tuple.
+Enums are done similarly.
+Contracts are also given by contract name rather than as "address".
+
+However, function types and address payable are treated as normal.
+
+Also, if a type is storage, " storage" is appended to the end.
+Note that this of course only happens at the very end.
+
+Also, mappings are allowed, as
+mapping(keyType => valueType)
+
+(and yes, " storage" is then appended)
+
+OK, TESTING TIME
+
+16:   PUSH4 0x541b9e46 takesAddressPayable(address)
+21:   PUSH4 0x8d935940 takesUint(uint256)
+26:   PUSH4 0xbba876d0 takesStoragePayableArray(address[] storage)
+36:   PUSH4 0xd85e6d8e takesEnum(WeirdTypesLib.Ternary)
+41:   PUSH4 0xe9285e59 takesStruct(WeirdTypesLib.Pair)
+46:   PUSH4 0xeb94a45e takesStorageOnlyStruct(WeirdTypesLib.Tree storage)
+59:   PUSH4 0x8db9322a takesPureFunction(function)
+64:   PUSH4 0xa15b24a1 takesMappingToStruct(mapping(string => WeirdTpesLib.Pair) storage)
+77:   PUSH4 0x542c20d5 takesString(string)
+82:   PUSH4 0x6bc275ed takesMappingToEnum(mapping(string => WeirdTypesLib.Ternary) storage)
+87:   PUSH4 0x7b96e706 takesStorageEnumArray(WeirdTypesLib.Ternary[] storage)
+92:   PUSH4 0x867c6ed0 takesMappingToLibrary(mapping(string => LibrarySelectorTest) storage)
+97:   PUSH4 0x875dca81 takesStorageStructArray(WeirdTypesLib.Pair[] storage)
+105:  PUSH4 0x2d249e4b nullary()
+115:  PUSH4 0x36c2e0bd takesStorageContractArray(LibrarySelectorTest[] storage)
+120:  PUSH4 0x3daf5966 takesStorage(string storage)
+125:  PUSH4 0x460f9625 takesAddress(address)
+130:  PUSH4 0x4bd7c317 takesMappingToFunction(mapping(string => function) storage)
+135:  PUSH4 0x4e56026d IHopeThisGoesLast()
+143:  PUSH4 0x037287ff takesMappingToPayable(mapping(string => address) storage)
+148:  PUSH4 0x0d2f5689 takesStorageStruct(WeirdTypesLib.Pair storage)
+153:  PUSH4 0x106a8648 takesStorageFunctionArray(function[] storage)
+158:  PUSH4 0x1419785a takesFunction(function)
+163:  PUSH4 0x19e476a4 takesContract(LibrarySelectorTest)
+168:  PUSH4 0x1d53d264 takesMapping(mapping(string => string) storage)

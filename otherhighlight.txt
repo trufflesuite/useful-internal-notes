@@ -1,0 +1,7 @@
+GitHub uses Linguist for syntax highlighting:
+https://github.com/github/linguist
+The Solidity files are here:
+https://github.com/davidhq/SublimeEthereum
+Linguist uses TextMate grammars for its highlighting:
+https://macromates.com/manual/en/language_grammars
+Note that Linguist takes these in YAML

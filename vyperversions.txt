@@ -1,0 +1,20 @@
+Storage rearranged in 0.2.13
+
+Source maps added in: 0.1.0-beta.7
+Solidity-style source maps added in: 0.1.0-beta.12
+JSON interface added in: 0.1.0-beta.13
+ASTs added in: 0.1.0-beta.13
+outputSelection moved into settings: 0.1.0-beta.15
+userdoc and devdoc added in: 0.1.0-beta.17
+vyper --standard-json added in: 0.2.5
+
+Note: There are still no source maps for constructors.
+Note: I don't know how ASTs have changed over time; they appear to have changed
+a fair bit.
+
+external function parameters changed in 0.1.0-beta.11?
+memory handling changed in 0.2.7??  Nothing I care about seems affected
+
+I can't get anything nontrivial to compile on 0.1.0b13 or earlier...
+and before 0.1.0-beta.12 we don't have ASTs anyway so who cares about external
+function parameters :P

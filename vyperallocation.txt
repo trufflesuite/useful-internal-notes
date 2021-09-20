@@ -1,0 +1,162 @@
+storage works how? [PRIOR TO 0.2.13; see below for 0.2.13 differences]
+	*. constants are skipped, duh
+	*. things are in-order as expected
+	*. there is no packing; everything uses a full word, even int128!
+		*. signed types (int128, decimal) are fully sign-padded
+		*. bool & address are left-padded (right-aligned), as expected
+	*. there are no multivalue types -- just direct & lookup!
+		[FALSE AS OF 0.2.13; see below]
+	*. arrays (which are static) are stored like Solidity *dynamic* arrays,
+		but without the length field! [the main slot goes unused, like
+		in mappings]
+		*. arrays of mappings don't seem to be allowed, though this may
+			be by accident; mappings of mappings are allowed, as are
+			other combinations
+		*. arrays of strings/bytestrings are similarly disallowed
+	*. structs work the same way! (well, the analogous way)
+		*. mappings in structs are not allowed, at all
+	*. empty arrays / structs are illegal (and I think always have been?)
+	*. mappings work like Solidity except the slot goes *BEFORE* the key
+		*. arrays, structs, mappings cannot be keys (duh)
+		*. as with Solidity, direct keys use padded form
+		*. unlike Solidity, Bytes[n] and String[n] are *hashed* first!
+		*. note: even within a mapping, lookup types are lookup!
+			there's no special case here
+	*. Bytes[n] & String[n] are lookup types; one format, not two
+		*. go to hash slot, like other lookup types. it contains length.
+			*. yes, length! Bytes[n] and String[n] are
+			size-*limited*, not *fixed* size
+		*. next slots contain the string (big-endian)
+
+storage [as of 0.2.13] works how?
+	*. there are no more lookup types! arrays and structs are now inline
+	*. what's more, strings/bytestrings are now inline too! and they still
+		skip an extra word after the end of what you'd think would be
+		the allotted space...
+
+Note: The reentrancy lock info is stored directly after the variables!
+However in 0.2.13 this isn't done properly and it overlaps them instead :P
+See vyperlock.txt for more info
+
+memory works how? [internal function parameters and local variables...]
+	*. covering post-0.2.7 first, pre is at end
+	*. it looks like, for a local variable, when it is declared, we can read
+		its *address* off the top of the stack at the next step.
+		(Or equivalently, out of the pushData of the current step!)
+	*. it does look like variables are consecutive after an initial working
+		space? with the selector at slot 0? but why is it so much larger
+		than needed? do they always start at 0x140? (I think so)
+	*. slots can be reused once a variable goes out of scope!! also between
+		frames, duh
+	*. functions CAN return multiple values, but they can't be named, so
+		we don't care about them
+	*. we hit function definitions spuriously a lot; maybe ignore them
+		unless jumpDirection = i
+		(we'd apply to Solidity but we can't because of <0.5.1)
+		(whereas here we don't have to handle external functions this
+		way, they're handled separately here as calldata)
+		I guess external functions would be allocated on hitting the
+		Module, and that would work for old versions as well...?
+	*. internal function parameters go on in order, starting at 0x140;
+		this happens in the unmapped code inbetween the function def
+		and the function body.  first the return address goes on (but
+		it goes *after* the params), then the params go on in order
+		(starting at 0x140, *before* the address)
+		Note that the address push comes immediately after the def node,
+		So you can use that as a reference point (or just use 0x140?
+		but probably shouldn't rely on that)
+		[except actually I think we should]
+			*. EXCEPTION: strings/bytesrings work weird in interal
+			fn params.  Where you would expect the string to be,
+			instead is a (one-word) *useless* pointer.  Don't use
+			the pointer, it's crap!  Instead strings go *after*
+			the return address.  As usual there's a junk word after
+			each one.
+		__init__ params, and old external fn params, also work this way
+		except for no return address inbetween non-strings & strings
+	*. external function parameters do not go in memory!
+		NOTE: this is as of 0.1.0b11; before that I assume they worked
+		like internal function parameters.  However currently we only
+		support 0.1.0b12 and forward
+	*. direct types encoding is what you expect
+	*. arrays and structs:
+		*. these are encoded in-place (multivalue types)
+		there are no pointers!! reference types are a lie!!
+		(assigning one to another copies!!)
+	*. strings and bytestrings:
+		*. main word (determined usual way) holds length, subsequent
+		ones hold content.  How many subsequent words to set aside based
+		on type, it seems (although it's always one *more* than is
+		necessary, oddly).  No pointers!  Assigning to one overwrites
+		at same place!
+		*. The extra word should *not* be counted as part of the string
+			as it sometimes contains unrelated data
+		*. EXCEPT: When passed as (internal) function arguments, they
+		/are/ given as a pointer!!  Well, sort of.  Not really.  See
+		above.
+			*. What if it's inside another structure?  It can't be!
+			It can in general, but structures containing strings
+			can't be used as parameters
+	*. differences in pre-0.2.7:
+		*. can't rely on local (non-param) vars being consecutive, not
+		that we were going to
+	*. function arguments can't be written to, even when internal! WTF
+
+stack seems to be used for saving return addresses & local variables of *lower*
+	frames; we don't care about it
+
+calldata: works as per the ABI, it seems!
+	*. Yes, external function parameters really do go here, not memory.
+		before 0.1.0b11 apparently not, but I can't get that to work,
+		so ignore it
+	*. Except: strings and bytestrings are sometimes copied to memory,
+		starting at 0x140, with appropriate space after each length
+		(note space is one word longer than expected)
+		(only strings/bytestrings contribute to this)
+		(but it only happens sometimes??)
+	*. BUT... calldata types cannot be written to, *including* strings.
+		So maybe we ignore that they're copied to memory.
+	*. __init__ is an exception: it's copied to memory and works like an
+		internal function!!  Except that there's no return address
+		between the parameters and the strings
+	*. __default__ does not take an argument, whew
+
+NOTE ON RETURN VALUES!  Apparently it's not exactly always compatible, see this
+issue: https://github.com/vyperlang/vyper/issues/2457
+
+Reminder, the types (using 0.2.0 names, excluding unit types) are:
+bool [note: bools are True & False, not true & false]
+uint256
+int128
+decimal (= fixed168x10) (21 bytes)
+address
+bytes32
+Bytes[n]
+String[n]
+type[n]
+structs
+HashMap[key, value]
+
+[old names: uint256 was num256 in ancient versions; int128 was num in ancient
+versions; Bytes[n] was bytes[n] in 0.1.x; String[n] was string[n] in 0.1.x;
+HashMap[key, value] was map(key, value) in 0.1.x; and of course 0.1.x also had
+unit types]
+
+Scoping: I think this just comes down to functions, if/else blocks, and for
+blocks, so you can treat it somewhat similarly to Yul
+(see vyperast.txt)
+
+-----
+vyper globals, as of 0.2.x:
+self [address]
+msg.gas [ugh] [uint256]
+msg.data [special!! type Bytes, not usable otherwise] //added in 0.2.12
+msg.sender [address]
+msg.value [uint256] [previously uint256(wei)]
+tx.origin [address]
+block.coinbase [address]
+block.difficulty [uint256]
+block.number [uint256]
+block.prevhash [bytes32] [NOT in Solidity!]
+block.timestamp [uint256]
+chain.id [uint256] //added in 0.1.0b15

@@ -1,0 +1,217 @@
+HOW GAS WORKS
+All gas paid counts towards gas used unless otherwise noted, but I might
+redundantly specify this at times.  Any failure to pay a gas cost results in an
+OOG unless otherwise noted.
+
+For the outermost transaction:
+1. Some amount of gas is sent.
+2. Some of this gas is used to pay the initial cost; the rest is received.  This
+	initial cost counts towards gas used.  (Note: A failure to pay here does
+	not result in an OOG but rather just in the transaction never happening
+	in the first place.)
+3. The transaction does things and uses gas.  Refunds do not give back gas yet.
+4. As part of executing a successful return, if it's a contract creation, the
+	code-deposit cost is paid; this counts towards the gas used.  This is
+	also where overlong contracts will OOG.
+	NOTE: Prior to Homestead, if the code-deposit cost couldn't be paid,
+	the transaction would still succeed but leave the code empty.
+	NOTE: Prior to Spurious Dragon, there was no code size limit.
+5. On return, refunds (including from non-reverted internal transactions) are
+	processed; the gas refunded at this step is capped at half of the gas
+	used up to this point (rounded down).  Refunded gas no longer counts
+	towards the gas used.
+5. At this point, all unused gas is returned.
+6. The price for the used gas is paid as the transaction fee.  Post-London,
+	only the priority fee goes to the miner; the base fee is burned.
+
+For inner transactions:
+1. The costs of the call/create opcode itself (including additional costs for
+	sending ether, sending ether to nonexistent accounts or initializing a
+	precompile, using a salt, or expanding memory) are paid.
+2. Some amount of gas is sent; the amount of gas sent is capped at 63/64
+	(rounded up) of the amount of gas remaining at this point.  (Creates
+	must send all available gas.)  Call the amount received at this point
+	the amount initially received.  All gas not sent is set aside.
+	NOTE: Prior to Tangerine Whistle, there was no cap, and if you tried to
+	send more gas than you had, you'd get an OOG.
+3. If it's not a create, and a nonzero amount of ether was transferred, a
+	stipend of 2300 gas is also received.
+4. The transaction does things and uses gas.  The amount that this counts
+	towards the gas used is capped at the amount initially received.  If
+	refunds occur, they affect the outermost transaction, not this inner
+	one.
+4. As part of executing a successful return, if it's a contract creation, the
+	code-deposit cost is paid; this counts towards the gas used.  This is
+	also where overlong contracts will OOG.
+	NOTE: Prior to Homestead, if the code-deposit cost couldn't be paid,
+	the transaction would still succeed but leave the code empty.
+	NOTE: Prior to Spurious Dragon, there was no code size limit.
+6. On return, all unused gas out of the amount initially received is returned,
+	and added to the gas that was set aside.  Unused gas beyond the amount
+	coming from the amount initially received is lost.
+
+Other notes: There are no such thing as memory refunds like I mistakenly
+thought; memory costs are based on memory touched, which never shrinks, not on
+memory which is nonzero.
+
+--------------------------------
+
+gas sent: 6721975
+gas used: 6618298
+cumulative gas used: same, adds up previous tx's in same block
+gas price: 20000000000
+transaction fee: 0.13236596 ether
+gas refunded: 103677
+
+so, how does the gas progress?
+
+starts at: 6700911
+what? 21064 gas gone right at the start?  OK...
+Ah, this is the intrinsic transaction cost, OK
+(21000 + 4 * 16... 16 bytes? shouldn't it be 4? maybe this cost was changed)
+
+Note that judging by the GAS instructions, we are correctly reporting gas left
+(i.e.: gas left after a GAS instruction does equal that instruction's return
+value)
+
+At the CALL there is 6699139 remaining, with 6699039 being passed in
+after the CALL there is 6593776 remaining
+where did that 105263 gas go?
+answer: looks like it vanished to the 63/64 rule
+(although 63/64 * 6699039 ~ 6594366, so where did the extra 590 gas go?)
+
+at the first STOP, there is 6592833 gas remaining
+afterwards, there is 6697496 gas remaining
+yup, gas remaining went up!
+by a total of 104663
+which is 600 short of the 105263 gas that vanished
+aha -- 700 is the base cost of a CALL
+yes, indeed, we're now at 6697496, compared to 6699139 before the CALL, so we're
+down 1643 compared to that?
+
+gas cost of call as measured externally: 1643?
+gas cost of call as measured internally: 943?
+Aha, these differ by 700!
+[report both!]
+
+So:
+*. 100 is set aside for later before the CALL
+*. 700 is paid for the CALL
+*. 105263 is set aside at the start of the CALL
+*. 943 is paid internal to the CALL
+*. then at the end we recover the 100 and 105263
+OK!
+
+OK, now for the second CALL:
+*. 6695876 gas before call
+*. 6695770 gas passed in (106 set aside)
+*. 6590564 gas received (105206 gas set aside)
+and the end of the CALL:
+*. 6589646 left before the REVERT
+*. 6694258 left after the REVERT
+internal cost: 918
+external cost: 1618
+what?? I thought REVERT was supposed to refund gas...?
+oh, I see.  that just means it doesn't consume the rest.
+it refunds *unused* gas.
+
+[I think we just want to print out external costs...]
+
+OK, last CALL:
+*. 6692574 gas before call
+*. 6692468 gas passed in (106 set aside)
+*. 6587314 gas received (105154 set aside)
+at the end of the CALL:
+*. 6586408 gas left before the INVALID
+*. 104560 gas left after the INVALID (ouch!)
+all that's left is what was set aside, minus the cost for the CALL
+(105154+106-700)
+
+Final state:
+103677 gas left
+This exactly matches the amount I mentioned as refunded earlier.
+So that initial vanished 21064 never returned...?
+
+On memory refunds:
+There are none.  You misunderstood this.  It doesn't go by what memory is
+nonzero, but by what memory is touched (read from or written to.)
+
+results of deletetest():
+gas sent: 6721975
+gas used: 13885
+gas available at start: 6700911
+gas remaining before SSTORE: 6699992
+gas remaining after SSTORE: 6694992
+
+Ah, we paid G_sreset (5000); we don't get R_sclear immediately
+
+6694206 gas left at end
+so, gas used internally is 6705; intrinsic cost of 21604
+refund ought to leave 13309 total used... where'd the extra 76 go?
+
+results of rundeletetest():
+gas sent: 6721975
+gas used: 16094
+gas available at start: 6700911 [initial cost 21064]
+gas left before CALL: 6699103
+gas sent with CALL: 6699103
+gas available at CALL start: 6593741
+gas left before SSTORE: 6592822
+gas left after SSTORE: 6587822
+gas left at end of CALL: 6587036 [6705 spent internally]
+gas left on return: 6691698 [7405 spent externally] [refund had no effect here]
+gas left at end: 6690881
+gas used internally: 10030
+gas used purely externally: 6064
+oh, there's our refund!
+
+SO: refunds do *not* affect gas left in the middle.  they *only* affect the
+outermost part.
+
+Q: can we get refunds to lower cost to zero, or less?
+two more deletes ought to do the trick...
+
+this time around:
+gas left at end: 6684144
+gas spent internally: 16767
+intrinsic cost: 21064
+gas used: 18916
+uh... what?
+
+OH! refunds are capped at half the gas used (before refunds), rounded down
+so in this case, refund is 45000, except instead it's actually 1895 instead,
+explaining things
+(and explaining the SD thing earlier)
+
+what about the stipend?
+stipend example:
+6699100 gas available before opcode costs
+-9700 leaves
+6689400 gas available before call
+so 6584879 should be passed on, with 104521 set aside
+plus stipend makes 6587179
+
+NOW: just before return we have 6586260 gas remaining, so we used 919
+after return we have 6690781
+how much did we get back?
+104521
+we didn't get the stipend back! OK
+
+10125 gas left before
+-9700 leaves 425
+minus another 6 (1/64) leaves 419
+plus 2300 makes 2719
+at STOP, we have 1800 left; we've used 919
+(so, 419 from the gas & 500 from the stipend)
+after STOP, we have 1806 left
+so yes -- we gained back the 6 (set aside), but NOT any of the stipend!
+
+----
+making the sink:
+6700657 gas remaining before CREATE
+so: we should expect to see 6595960 gas
+not: 6564460
+(a difference of 31500)
+oh, no! I'm wrong!
+OK
+The yellow paper is wrong here

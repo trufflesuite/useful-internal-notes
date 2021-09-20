@@ -1,0 +1,43 @@
+Solidity ASTs:
+*. each node has nodeType
+*. each node, and some "pseudo-nodes", have src
+*. each node has id, which is unique per-compilation
+*. top level: SourceUnit
+*. expression and variable nodes don't list their datatype
+
+Yul ASTs:
+*. each node has nodeType, starting with "Yul"
+*. each node has src
+*. there are no IDs
+*. top level: YulBlock, but maybe sometimes other Yul things?
+*. there are no datatypes (currently)
+
+Vyper ASTs, as of 0.1.0-beta.17:
+*. each node has ast_type
+*. sourced nodes have src
+*. each node has node_id, which is unique per *source*
+*. top level: Module
+*. variable nodes list their datatypes (obliquely), but expression nodes don't
+*. uses "id" not as a node ID, but rather for names of things!
+
+Vyper ASTs, prior to 0.1.0-beta.17:
+*. like above, except there's NO ROOT NODE.  Instead the root node is just an
+	array!! @_@
+
+Solidity legacy ASTs, 0.4.0 forward:
+*. each node has *name* as the nodeType (!)
+*. each node has src
+*. each node has id which is unique per compilation
+*. top level: SourceUnit
+
+Solidity legacy ASTs, 0.3.6:
+*. each node has *name* as the node type (!)
+*. each node has src
+*. each node has id which is unique per compilation
+*. top level: root (!)
+
+Solidity legacy ASTs, prior to 0.3.6:
+*. each node has *name* as the node type (!)
+*. there are no source ranges
+*. there are no IDs
+*. top level: root

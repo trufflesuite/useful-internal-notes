@@ -1,0 +1,18 @@
+Things that cause instacalls:
+
+guaranteed by the yellow paper:
+*. attempting to pay more than you have (instarevert)
+*. attempting to call when the EVM callstack is full (1024) (instarevert)
+not guaranteed but don't see how else it could be handled:
+*. calling a precompile
+*. attempting to overwrite existing (instarevert) [EIP suggests it could get to
+	first instruction and *then* revert, but that doesn't make a lot of
+	sense]
+not guaranteed, has an alternative, but seems to be the case:
+*. calling an account with no code (regardless of why it has no code!)
+*. creating an account while passing no code
+
+ANOMALOUS SITUATION:
+run off looks like a revert even though it's not!
+I think we need better revert detection
+(yes, we do)

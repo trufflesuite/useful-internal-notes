@@ -1,0 +1,200 @@
+top level is
+{
+  ast_type: "Module"
+  name: <file name>
+  body: <array>
+}
+
+----
+For stacktracing, what does a function definition look like?
+{
+  ast_type: "FunctionDef"
+  name: <function name> //whew!
+}
+----
+
+For scoping, we need to look at function definitions, if/else blocks,
+and for loops
+
+function definitions:
+
+{
+  ast_type: "FunctionDef"
+  body: [ <statements> ]
+}
+
+if/else:
+{
+  ast_type: "If"
+  body: [ <statements> ]
+  orelse: [ <statements> ] //is present even if no else; just empty then
+}
+NOTE: if an elif is present, it's just treated as if there were an if/else in
+the orelse!!  Does that ruin scoping?  No, I think it still works just fine to
+treat it naively, whew.
+
+for:
+{
+  ast_type: "For"
+  body: [ <statements> ]
+  orelse?: [ <statements> ] //exists prior to 0.1.0b14??
+  //but was never really supported??  I can't get it to work, ignore it
+  iter: <range expression>
+  target: {
+    ast_type: "Name"
+    id: <variable name>
+    //note the lack of any type!!
+    //and no, you *cannot* put an AnnAssign here, I tried
+  }
+}
+
+----
+
+NOTE: The $ sign is not legal in variable names, which is convenient :)
+
+Where are the names and data types?
+For expressions: none, sorry
+
+Local variables, other than iterator variables:
+{
+  ast_type: "AnnAssign"
+  target: {
+    ast_type: "Name"
+    id: <variable name>
+  }
+  annotation: <type object>
+}
+
+Note: You cannot declare multiple at once
+
+Iterator variables: see above (there are no types but there is a name)
+(so I guess it's)
+{
+  ast_type: "Name"
+  id: <variable name>
+  //note the lack of any type!!
+}
+
+Storage variables:
+Ordinarily like local variables, but the type may be wrapped in one of the
+following:
+[not both]
+{
+  ast_type: "Call"
+  func: {
+    ast_type: "Name"
+    id: "public" | "constant" //OK, constants aren't put in storage
+  }
+  args: [ <type object> ]
+}
+[constants also aren't considered state variables and aren't accessed with self]
+
+Input and output parameters -- first, where are they?
+{
+  ast_type: "FunctionDef"
+  args: {
+    ast_type: "arguments" //yes, that's lowercase!
+    args: <array of argument objects>
+  }
+  returns: <type object>
+}
+
+An argument object looks like:
+{
+  ast_type: "arg" //yes, that's lowercase!
+  arg: <argument name>
+  annotation: <type object>
+}
+
+
+What do type objects look like?
+
+For types given by just a type name: [includes bare Bytes & String even though
+these are not legal types; HashMap too obviously]
+[and in 0.1.x this includes built-in unit types]
+
+{
+  ast_type: "Name"
+  id: <type name>
+}
+
+NOTE: For structs, there's nothing like referencedDeclarations, sorry!
+
+For types that end with an integer subscript:
+{
+  ast_type: "Subscript"
+  value: <base type object>
+  slice: {
+    ast_type: "Index"
+    value: {
+      ast_type: "Int"
+      value: <subscript>
+    }
+  }
+}
+
+For types that end with multiple type subscripts:
+{
+  ast_type: "Subscript"
+  value: <base type object>
+  slice: {
+    ast_type: "Index"
+    value: {
+      ast_type: "Tuple"
+      elements: <array of type objects>
+    }
+  }
+}
+
+You can figure out what multiple integer subscripts, or a single type subscript,
+would look like.
+
+In 0.1.x, we also have map(), which takes *arguments* rather than subscripts,
+and so looks like the following:
+{
+  ast_type: "Call"
+  func: <base type object>
+  args: <array of type objects>
+}
+
+Types with uints on them (also 0.1.x only) look like so:
+{
+  ast_type: "Call"
+  func: <base type object>
+  args: [ {
+    ast_type: "Name"
+    id: <unit abbreviation>
+  } ]
+}
+
+What do struct declarations look like?
+{
+  ast_type: "StructDef"
+  body: <array of AnnAssigns, see above>
+}
+
+What do unit declarations look like?
+{
+  ast_type: "AnnAssign"
+  target: {
+    ast_type: "Name"
+    name: "units" //yes, always!
+  }
+  annotation: {
+    ast_type: "Dict"
+    keys: [ ... ]
+    values: [ ... ] //yes, these are parallel arrays!
+  }
+}
+
+each key is:
+{
+  ast_type: "Name"
+  id: <key, i.e. unit abbreviation>
+}
+
+each value is:
+{
+  ast_type: "Str"
+  value: <value, i.e. unit name>
+}

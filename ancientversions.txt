@@ -1,0 +1,37 @@
+Notes on compiling ancient Solidity:
+
+*. before 0.4.9, *all* contracts would go under the '' source path
+	NOTE: this means you'll need to extract primarySource from sourceMap
+	[ideally constructor sourceMap], rather than ast or legacyAST
+*. before 0.4.9, there is legacyAST, but no AST!
+	(you would expect the reverse...)
+*. before 0.4.0, the legacyAST format is different
+*. before 0.4.0, there was a "standard library" of sources you could
+	import...? it seems to be undocumented
+	Coin, CoinReg, Config, NameReg, coin, configUser, mortal, named, owned,
+	service, std
+	[however, only 0.3.6 puts them in the sources output... at least if
+	they're not imported]
+	see std.txt for the sources (or at least the 0.3.6 versions of such)
+*. In 0.3.6 specifically, runtime sourcemaps don't seem to exist
+	[or we may just need to do something special to get them?]
+*. before 0.3.6, there are no sourcemaps, and ASTs have no source ranges
+	[this means, at best, you could extract primarySource via searching the
+	ast :-/]
+*. before 0.1.6, only one input source was allowed
+	[this would require an explicit version check]
+*. before 0.1.6, the unique input source would have '' as its source path
+*. before 0.1.3, there was no deployed bytecode info
+
+PLAN:
+*. allow corresponding sources not to exist, so 0.1.6-0.4.8 can compile
+	[this would mean no sourcePath, source, ast, legacyAST]
+	*. ALTERNATE PLAN: if possible, locate the corresponding source by
+		getting the src, extracting the index, and getting the
+		corresponding source
+*. do not support <0.1.6, duh
+*. do not change the null-out
+*. do not change language inference
+*. do allow primary source inference to look at constructor sourcemap
+	[don't bother with legacy AST or runtime sourcemap]
+	if using alternate plan: use legacyAST rather than sourcemap

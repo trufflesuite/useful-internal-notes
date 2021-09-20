@@ -1,0 +1,46 @@
+big list:
+https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
+old URL:
+https://github.com/ethereum/sourcify/blob/master/chains.json
+
+sourcify currently supports:
+chainID	name		networkID
+1	mainnet		1
+3	ropsten		3
+4	rinkeby		4
+5	goerli		5
+42	kovan		42
+56	binance mainnet	56
+77	sokol		77
+97	binance testnet	97
+100	xdai		100
+137	matic mainnet	137
+42220	celo mainnet	42220
+44787	celo alfajores	44787
+62320	celo baklava	62320
+80001	matic mumbai	80001
+
+etherscan currently supports: (at least, there may be more)
+[not counting things like binance that are on a different domain]
+chainID	name			networkID	subdomain
+1	mainnet			1		[none]
+3	ropsten			3		ropsten
+4	rinkeby			4		rinkeby
+5	goerli			5		goerli
+42	kovan			42		kovan
+10	optimism mainnet	10		optimistic
+69	optimism kovan		69		kovan-optimistic
+
+etherscan's bscscan.com supports:
+chainID	name			networkID	subdomain
+56	binance mainnet		56		[none]
+97	binance testnet		97		testnet
+
+etherscan's ftmscan.com supports:
+chainID	name			networkID	subdomain
+250	fantom			250		[none]
+
+etherscan's polygonscam.com supports:
+chainID	name			networkID	subdomain
+137	matic mainnet		137		[none]
+80001	matic mumbai		80001		mumbai

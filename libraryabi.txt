@@ -1,0 +1,16 @@
+Pure and view functions that don't take or return storage pointers go in the
+ABI and do not have the delegatecall guard.
+Other functions were removed from the ABI as of 0.5.6.
+The delegatecall guard was added in 0.4.20.
+The internalType field was added in 0.5.11.
+
+Note that before 0.5.6, even functions that took or returned storage pointers
+went in the ABI!
+They just had their types written out... even structs!
+bytes32[] storage
+mapping(bytes => bytes) storage
+HasPure.PointToMe storage
+...BUT... you can't trust this because this *only* applies to storage!
+memory or calldata structs are still given the normal way, which is wrong in the
+library context
+So, we can't rely on this :(

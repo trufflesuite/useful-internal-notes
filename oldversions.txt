@@ -1,0 +1,102 @@
+[see also ancientversions.txt for more]
+
+error codes were introduced in 0.6.10
+
+most recent "we forgot to fix the padding" bug: fixed in 0.4.25!
+(it was on exponents)
+
+0.5.1 is the jump change, obviously, and 0.6.0 introduces modifierDepth, as well
+as Yul ASTs
+
+delegatecall guard added in 0.4.20
+
+remember: we don't have to support 0.4.8 or older, because 0.4.9 is when the new
+AST format was introduced
+
+unary + was legal prior to 0.4.18
+
+Note that function variables were introduced *after* payable was introduced for
+functions, so we never have to account for ambiguously-payable function defns!
+
+"payable" for fns was introduced in 0.4.0; prior to that all were payable
+"payable" for addresses was introduced in 0.4.0; prior to that all were payable
+node.kind for function definitions introduced in 0.5.0; prior to that check
+	isConstructor and the name
+stateMutability introduced in 0.4.16 along with pure/view; prior to that check
+	constant and payable
+constant (i.e. view) functions seem to have been introduced in 0.4.3... or
+	maybe they were there earlier but not documented?
+	I think they must have already been there before 0.4.0? Yeah they appear
+	in std.sol...
+before 0.5.0, empty structs were allowed, as were type[0]
+Function types used added in 0.4.5
+
+leading 0s used to be allowed prior to 0.4.10, but it's not clear whether they
+function correctly or not (docs said leading 0s were ignored but release note
+implies they might have been accidentally treated as octal literals)
+
+"Version 4.0: confusing and undocumented 'after' keyword was removed"
+
+Thankfully, constant payable is not allowed
+
+Q: how did the old fixed-point system work? pretty sure it was never
+implemented; it's last mentioned in the docs for 0.4.13, and the modern system
+is first mentioned in the docs for 0.4.17
+
+(HM -- the abi docs have the modern way as far back as 0.4.12, which is as far
+back as they exist)
+
+(default changed from 19 to 18 after 0.4.21)
+
+Things that are clear:
+1. it was binary fixed-point rather than decimal fixed-point
+but what did the two parameters mean?
+
+Examples of natural types:
+1/4	ufixed0x8
+1/3	ufixed0x256 (has to be approximated)
+5.3743	ufixed(8x248) (has to be approximated)
+oh -- I think it's, ufixedNxM was,
+N = bits before binary point
+M = bits after decimal point
+(both must be multiples of 8, must total to at most 256, and presumably cannot
+both be 0)
+interestingly ufixed was ufixed128x128
+
+enums have checked range on conversion since at least 0.4.5.
+Did they do this prior to this?
+NO!  The release notes say this check was *added* in 0.4.5
+
+there has been no implicit conversion to bool since at least 0.2.1
+(the earliest documented version)
+was there explicit conversion?
+Nope!  And I can't seem to test 0.2.0 or older, so, this was never allowed
+
+The CBOR info (metadata) on the end of the contract was added in 0.4.7.
+Even 0.4.6 though wouldn't let things run off the end.
+They had other guards on the end, like a stop or a jump-to-start.
+...or maybe they didn't.  but still things can't run off the end since,
+y'know, whole functions. (even fallback ends with a STOP; others end with a
+JUMP)
+Putting in the compiler version was added in 0.5.9
+
+The compiler's JSON interface goes back at least to 0.1.3
+Sourcemaps were added in 0.3.6
+However, prior to 0.4.0, the runtime sourcemap was in a different field in the
+output, so it needs to be gotten differently
+Prior to 0.1.3, you couldn't get runtime bytecode :P
+0.3.6 also added source location and node IDs in the (legacy) AST
+so ASTs from before then are useless! (were there ASTs back then...?)
+(and there were no sourcemaps back then)
+
+The ability to compile Yul standalone was added in 0.5.7...
+note this is *before* Solidity asembly got Yul ASTs in 0.6.0
+
+Inline assembly (with most of its bells and whistles!) was introduced in 0.3.1;
+the selfdestruct opcode (as opposed to suicide) was introduced in 0.4.3
+the selfdestruct function (as opposed to suicide) was introduced in 0.2.0
+
+customizing the metadata hash (including omitting it) was added in 0.6.0
+this is also when it switched from default (or rather, *only*) bzzr1 to default
+ipfs (with no bzzr0 option :P )
+the switch from bzzr0 to bzzr1 happened in 0.5.12

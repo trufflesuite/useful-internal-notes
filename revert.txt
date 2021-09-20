@@ -1,0 +1,27 @@
+Ways to revert/exceptional halt, other than instareverts (instacall.txt):
+*. REVERT
+*. Invalid opcode (INVALID)
+*. Stack underflow
+*. Out of gas (including when paying the code deposit cost)
+*. Jump (JUMP or taken JUMPI) to anywhere not a JUMPDEST, including past end
+*. Stack overflow (1024)
+*. Reading past the end of returndata with RETURNDATACOPY (doesn't apply to
+	CALLDATACOPY or CODECOPY!)
+*. Doing something nonstatic inside a STATICCALL (not just the call itself, but
+	anything it calls).  Nonstatic things:
+	*. doing an SSTORE
+	*. doing a CREATE or CREATE2
+	*. doing a SEFLDESTRUCT
+	*. doing a LOG0, LOG1, LOG2, LOG3, LOG4
+	*. doing a CALL or CALLCODE with nonzero value
+*. a creation returns a contract beginning with 0xef (as of London)
+-----
+Things *not* reverted by an exceptional halt or revert:
+
+Gas used (duh)
+The nonce increment (to the caller) *for the reverted stackframe itself*, if any
+(nonce increments from *inside* the reverted stackframe *are* reverted, and if
+the call was itself a creation call, the nonce of the created contract won't get
+incremented)
+
+(yellow paper says self-destructs and logs aren't reverted, but it's wrong)

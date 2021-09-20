@@ -1,0 +1,7 @@
+how getters work, for complex types:
+1. arrays do not return an array, but rather take a uint argument
+2. mappings take an argument of the type of the key
+3. structs generally do not return the struct, but rather destructure into
+their particular components, but with arrays and mappings omitted
+4. however, structs *inside other structs* return the particular struct -- this
+*includes* any arrays, and any mappings are forbidden

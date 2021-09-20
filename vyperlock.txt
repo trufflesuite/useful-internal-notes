@@ -1,0 +1,5 @@
+The Vyper reentrancy lock is stored after the storage variables.
+
+Each separate lock is stored as a boolean taking up a full word (just the low
+bit is used.)
+The order of the locks is the order of the first function that uses them.

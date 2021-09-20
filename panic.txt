@@ -1,0 +1,21 @@
+Panic(uint256)
+0x4e487b71
+
+0x01: assert(false)
+0x11: arithmetic overflow
+0x12: divide by zero
+0x13: enum out of range
+0x31: array underflow
+0x32: index out of bounds
+0x41: overlarge array / out of memory
+0x51: call to default internal function
+
+Note: Even zero function yields Panic(0x51) now, because Solidity now checks for
+zero!  And converts to default on load from storage.
+
+errors:
+*. require(false)
+*. call contract w/no code
+*. got ether but not payable
+*. transfer() fails
+[*. decoding errors, I would assume?]

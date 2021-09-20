@@ -1,0 +1,23 @@
+Direct types are always assigned by value.
+
+Assigning from one storage location to another always does a deep copy, causing
+any shared children to become separate.  This includes calling an external
+function, thereby "assigning" to calldata.
+
+Local reference variables are actually pointers.  Assigning to one (not its
+children!) just changes the pointer.  Assigning a state variable to a local
+storage variable just assigns a pointer to it.
+
+All reference types in memory are also actually pointers.  Assigning to one
+just changes the pointer.  Basically, memory-to-memory assignments never copy
+(unless it's of a direct type and you're just assigning by value).
+
+On the other hand, storage-to-storage assignments always copy -- unless, as
+mentioned, it's to a storage variable on the stack, which just assigns a
+pointer; or unless it's a mapping, in which case nothing happens.
+
+The delete operator just assigns the default value to something; however, it
+cannot be applied to storage pointers.  For dynamic storage arrays, it also
+deletes all the elements of the array.  (For mappings, it does nothing.)  (Note
+that for memory reference types, it just resets the pointer to the null pointer;
+the underlying structure still exists in memory!)

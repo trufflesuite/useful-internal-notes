@@ -1,0 +1,43 @@
+How super works:
+
+super, while inside a contract C, is a special type, super contract C
+(it's of typeclass "super")
+
+super.f is always an internal function
+
+But super is special because super.f, in the same location, does *not* always
+yield the same function!
+
+The short version is that super.f is the next one in inheritance order.  So it
+depends not only on what function is invoking it, but also what class that
+function is running in.
+
+LONG VERSION:
+super.f, occurring in a function defined in class A, running in an instance of
+class B, refers to the internal function named f in class C, where C is the
+next after A, in the inheritance order of class B, that contains an internal
+function named f.  It can only be legally used if class A has at least one
+ancestor with such a function.
+
+NOTE: This dependence on B actually pops up elsewhere, e.g., any time you make
+a bare reference to an internal function without a qualifying class.
+
+-----------------------------------------------------------------------------
+
+QUESTION: Does it only depend on that, or does it also depend on how that
+function was called (via super or not via super)?
+
+(Expected answer: Yes, it only depends on that) CORRECT
+
+QUESTION: When is it legal to use super.f?
+
+(Expected answer: When at least one ancestor has an f) CORRECT
+
+QUESTION: What happens if only some ancestors have f?
+
+(Expected answer: it goes to the next one that has it) CORRECT
+
+QUESTION: Functions declared external are skipped, right?
+ANSWER: No, actually these cause a problem with overriding functions failing to
+have the same visibility.  Oops.
+Also, this can't be worked around, because stuff is inherited.

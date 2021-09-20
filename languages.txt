@@ -1,0 +1,260 @@
+https://github.com/s-tikhomirov/smart-contract-languages/blob/master/README.md
+
+Solidity
+Vyper
+Flint
+Tranquility
+Formality
+Lira
+others listed in the file above, see also below
+
+Q: I ingored DSLs (such as ink!, but maybe I shouldn't...)? TODO MAYBE
+
+Vyper: Uses ABI. [types marked * were removed in 0.2.x]
+has types:
+bool
+uint256 [called num256 in ancient versions]
+int128 [called num in ancient versions]
+int256 [as of 0.2.12]
+decimal (= fixed168x10)
+address
+* unit types (= some numeric type; varies, can make custom ones)
+	(must be uint256, int128, or decimal underlying)
+	default ones: timestamp, timedelta, wei_value (all uint256)
+bytes32
+Bytes[n] (bytes of length at most n; in ABI it's bytes) [bytes[n] in 0.1.x]
+	[msg.data has special type just Bytes, but that's special]
+String[n] (string of length at most n; in the ABI it's string)
+	[string[n] in 0.1.x]
+type[n]
+structs
+HashMap[key, value] (not ABI, obviously) (legal keys basically same in solidity)
+	[map(key, value) in 0.1.x]
+
+What would need to be added for decoding?
+1. builtin units (timestamp, timedelta, wei_value)
+2. custom units
+3. bytes[n] (as distinct from bytesN)
+	new kind for bytes? intermediate?
+4. string[n]
+	new kind for string? intermediate?
+
+LLL: does not have types internally!
+but encourages users to use the ABI :P
+
+Zinc: This does target the EVM, right...?
+Types:
+() [the unit type]
+bool
+u8 .. u248 [no u256??]
+i8 .. i256 [no i256??]
+field -- a field element...?  Represents a *254*-bit integer, because BN256 uses
+F_(2^254)...?
+Apparently everything is based on field, which is why no u256 or i256...?
+arrays [are these fixed-lenth, or what?]
+tuples
+structs
+enums
+strings are planned eventually, but don't really exist yet?
+mappings (MTreeMap)
+
+Fe: Type system still not done, it seems.  It intends to have:
+bool
+address
+contract types
+u8 u16 u32 u64 u128 u256
+i8 i16 i32 i64 i128 i256
+strings & bytestrings? tuples and arrays? structs & enums? mappings?
+function types?
+event type?? these will be storable I guess??
+no decimal, interestingly
+Oh, has allocation/encoding info!
+It's hard to tell, but storage appears to *actually* use the same system as
+Solidity, except that:
+1. mappings may not take up a slot at all, but get their own system of nonces?
+2. Like Vyper it puts the slot [nonce] first
+3. Also it's not clear if keys are padded
+Memory also appears to probably work like Solidity?
+
+Bamboo [dead?]
+Uses ABI
+has types:
+void (not in ABI I guess? is the unit type I like in TS? or just ignorable?)
+uint256
+bool
+uint8
+bytes32
+address
+mappings (allows mappings in the domain!!!) (not ABI obviously)
+any arbitrary name [identifier] that's not a keyword, apparently??
+
+NOTE: Bamboo only *kind of* has types internally; it has type *names*, but the
+types come with no semantics; they're all just 32-byte words with, again, no
+particular semantics!
+
+This is how arbitrary names can act as types, because types are meaningless!
+
+You can even declare a variable as void and then assign values to it!
+
+What would need to be added for decoding?
+1. void, I guess??
+2. generalized mappings??
+	multiple kinds for mappings? elementary vs general?
+3. named words??
+
+Serpent [dead]
+Man IDFK
+I think it just does raw stuff like LLL?  I'm not sure though?  We'll never have
+to support it anyhow
+
+Tranquility
+I think this is too early in development to say
+I think it uses the ABI??
+New ideas it has typewise:
+*storages* (confusing name), which are basically non-contract classes (w/o
+inheritance); also storages can be *generic*, whoa
+It does at least appear to have:
+Uint
+Address
+Boolean
+Bytes [dynamic?]
+Map<Key, Value>
+Array<Type>
+Message (!)
+The existence of strings seems to be implied?
+
+Flint
+Uses the ABI -- has a *separate* type system for external interfaces which is
+a subset of Solidity's.  Things must be cast to this before external use.
+Internally, it has:
+Int (uint256 -- not int256, huh!)
+Address (address)
+Bool (bool)
+String (limited to 32 bytes! but won't be later?)
+Void (not a real type, just used for things w/no return value)
+[T] (i.e., T[])
+T[n] (i.e., T[n])
+[K: v] (i.e., mapping(K => v), except it knows its keys... or will eventaully)
+Self (ignore this, it's purely internal)
+structs
+enums [not mentioned in the list but they're there]
+
+Wei is a standard library struct (asset)
+one thing I found mentions Ether but I'm guessing that's outdated
+
+floats are not supported "yet"??  I'm guessing that "yet" shouldn't be there
+
+Formality
+Does this use the ABI??  Probably not
+Probably it just uses Word (32-bit), only question is whether they're packed
+or padded (and how they're padded if so)
+
+user-defined algebraic datatypes!
+Nat is a standard one?  So is Bool?
+type parameters are allowed... but also natural number parameters??
+Also all of these are ultimately just syntactic sugar for lambdas in a
+standard lambda-calculus way??
+Also there are native pairs which are separate from all this? (but they're
+sugar too)
+Also there is Word which is a native 32-bit (not byte) word
+obviously there are function types
+also box types
+and self types?
+
+Idris
+uh is this *actually* targeting the EVM...?  It doesn't seem to be...
+
+Huff
+typeless; uses raw 32-byte words
+
+Pyramid [dead?]
+Dynamically typed.  Values are either untagged/unboxed (always interpreted as
+just a 32-byte word) or tagged/boxed (always represented as a pointer to
+memory where the value lives).
+The tagged value itself always consists of 1 word with the tag, and then the
+remaining data.
+Can be tagged as:
+0. Fixnum (i.e., uint256)
+1. Symbol [an ASCII string of length exactly 32]
+2. Compiled procedure [a code pointer *and* closure environment pointer;
+	2 words long]
+3. Primitive procedure [a code pointer]
+4. Pair [consists of two tagged values, i.e. pointers]
+5. Vector [consists of a capacity n (!), a size, and then n tagged values...
+	... I guess ones beyond the size are just kept null? or are they left
+	as junk?]
+6. Nil [has a size of 0, or rather 1 when you include the tag word]
+	Note: there's just one copy of nil, found at memory 0xc0
+No idea if it uses the ABI :P
+(OK it looks like there were plans to implement the ABI, but it wasn't
+implemented yet)
+
+Lolisa [dead?]
+It's a subset of Solidity apparently so I don't care
+
+Logikon [dead?]
+Uint? List? Array? Addr?
+grammar says types are Bool, Uint, Array, List
+not sure where Addr came from
+does it use the ABI?? who knows??
+
+functional-solidity-language [dead, never actually implemented]
+who cares
+
+Babbage [dead]
+a visual language! but can I find info on it?
+not sure this was ever released so whatever
+
+SolidityX [dead]
+not public yet! and likely never will be
+
+L4 [dead]
+as best I can tell this was never released
+
+Mutan [dead]
+Hard to tell; looks to just be untyped words.  It's dead anyway.
+
+Lira:
+Lira is a DSL and seems to be extremely primitive; I'm not sure it even has
+variables other than what's passed in.  It uses the ABI for input, but takes no
+input variables, and doesn't seem to return anything either.
+
+Solang: like Solidity but uses its own ABI!
+NOTE: does not target EVM at the moment, so maybe ignore it!
+It uses SCALE encoding.  What about function types?  They don't exist yet.
+(Also not sure about some other subtleties.)
+No idea about data encoding aside from that
+
+Alacrity: There is not enough here to learn about encoding.
+It's also nowhere near done apparently.
+Types:
+boolean
+enums (not yet apparently)
+No function types (yet?)
+Unit type?
+Lists (homogeneous of a given type) (don't exist yet)
+Option [Haskell's maybe] for a given type
+uint256 (the only number type right now)
+No floats :P
+Structs eventually?
+Strings eventually?
+Tuples, but currently only pairs, and none of size 1
+Claims there's a bytes type but doesn't document it
+Variants eventually?
+There will be generics eventually?
+
+Ergo: Doesn't target EVM
+
+Sandcastle: nowhere near done, still secret
+
+FSolidM: what is this??
+
+Findel: seems kind of like Lira
+
+Chorus: Dead I guess
+
+ADICO: just a paper
+
+ink!: doesn't target EVM
+
+Egelund-Muller etc: just a paper
