@@ -9,7 +9,8 @@ For the outermost transaction:
 	initial cost counts towards gas used.  (Note: A failure to pay here does
 	not result in an OOG but rather just in the transaction never happening
 	in the first place.)
-3. The transaction does things and uses gas.  Refunds do not give back gas yet.
+3. The transaction does things and uses gas.  This includes costs for expanding
+	memory.  Refunds do not give back gas yet.
 	NOTE: Post-Constantinople, things can *decrease* the refund counter!
 4. As part of executing a successful return, if it's a contract creation, the
 	code-deposit cost is paid; this counts towards the gas used.  This is
@@ -38,10 +39,10 @@ For inner transactions:
 	send more gas than you had, you'd get an OOG.
 3. If it's not a create, and a nonzero amount of ether was transferred, a
 	stipend of 2300 gas is also received.
-4. The transaction does things and uses gas.  The amount that this counts
-	towards the gas used is capped at the amount initially received.  If
-	refunds occur, they affect the outermost transaction, not this inner
-	one.
+4. The transaction does things and uses gas (including costs for expanding
+	memory).  The amount that this counts towards the gas used is capped at
+	the amount initially received.  If refunds occur, they affect the
+	outermost transaction, not this inner one.
 4. As part of executing a successful return, if it's a contract creation, the
 	code-deposit cost is paid; this counts towards the gas used.  This is
 	also where overlong contracts will OOG.
