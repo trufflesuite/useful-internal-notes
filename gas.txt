@@ -10,6 +10,7 @@ For the outermost transaction:
 	not result in an OOG but rather just in the transaction never happening
 	in the first place.)
 3. The transaction does things and uses gas.  Refunds do not give back gas yet.
+	NOTE: Post-Constantinople, things can *decrease* the refund counter!
 4. As part of executing a successful return, if it's a contract creation, the
 	code-deposit cost is paid; this counts towards the gas used.  This is
 	also where overlong contracts will OOG.
