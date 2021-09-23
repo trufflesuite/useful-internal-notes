@@ -18,8 +18,9 @@ For the outermost transaction:
 	the transaction would still succeed but leave the code empty.
 	NOTE: Prior to Spurious Dragon, there was no code size limit.
 5. On return, refunds (including from non-reverted internal transactions) are
-	processed; the gas refunded at this step is capped at half of the gas
-	used up to this point (rounded down).  Refunded gas no longer counts
+	processed; the gas refunded at this step is capped at a specified
+	fraction of the gas used up to this point (rounded down).  (One half
+	pre-London, one fifth post-London.)  Refunded gas no longer counts
 	towards the gas used.
 5. At this point, all unused gas is returned.
 6. The price for the used gas is paid as the transaction fee.  Post-London,
