@@ -30,7 +30,7 @@ Petersburg		Undo (C)
 Istanbul		(C); SSTORE OOGs <=stipend; ↓data; ↓0x06-0x08; ↑various
 Muir Glacier		none
 Berlin			↓0x05; state read changes (↑cold, ↓hot); access lists
-London			Rework transaction fees; reduce refunds in several ways
+London			Rework transaction fees; reduce refund cap
 
 Fork name		Other changes
 ---------		-------------
