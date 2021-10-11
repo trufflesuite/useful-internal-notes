@@ -10,8 +10,8 @@ as Yul ASTs
 
 delegatecall guard added in 0.4.20
 
-remember: we don't have to support 0.4.8 or older, because 0.4.9 is when the new
-AST format was introduced
+remember: we don't have to support debugging 0.4.11 or older, because 0.4.12 is
+when the new AST format was introduced
 
 unary + was legal prior to 0.4.18
 
