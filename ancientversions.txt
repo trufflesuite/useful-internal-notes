@@ -1,10 +1,11 @@
 Notes on compiling ancient Solidity:
 
+*. not quite ancient, but before 0.4.12, there is legacyAST, but no AST!
+	(you would expect the reverse...)
+(actual ancient stuff follows)
 *. before 0.4.9, *all* contracts would go under the '' source path
 	NOTE: this means you'll need to extract primarySource from sourceMap
 	[ideally constructor sourceMap], rather than ast or legacyAST
-*. before 0.4.9, there is legacyAST, but no AST!
-	(you would expect the reverse...)
 *. before 0.4.0, the legacyAST format is different
 *. before 0.4.0, there was a "standard library" of sources you could
 	import...? it seems to be undocumented
