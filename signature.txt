@@ -7,6 +7,7 @@ Enums are done similarly.
 Contracts are also given by contract name rather than as "address".
 
 However, function types and address payable are treated as normal.
+ALSO, UDVTs are treated transparently!!  They are *not* done the library way!!
 
 Also, if a type is storage, " storage" is appended to the end.
 Note that this of course only happens at the very end.
