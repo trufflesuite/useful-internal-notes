@@ -45,3 +45,4 @@ use AST
 But using AST relies on there not being multiple contracts of same name...
 was that illegal prior to 0.4.9?  But that means compilation success/failure
 could depend on whether whole project is compiled or not.
+[Seems like it wasn't *illegal*, but, uh, it might not work reliably...?]
