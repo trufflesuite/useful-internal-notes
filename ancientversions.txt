@@ -40,3 +40,8 @@ PLAN:
 ALTERNATE ALTERNATE PLAN: (currently looking most plausible)
 do *not* allow corresponding sources not to exist, but *do* do a repair using
 the src from the constructor source map, so things work back to 0.3.6
+OH WAIT: could be interface, then no bytecode, so no sourcemap, would have to
+use AST
+But using AST relies on there not being multiple contracts of same name...
+was that illegal prior to 0.4.9?  But that means compilation success/failure
+could depend on whether whole project is compiled or not.
