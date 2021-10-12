@@ -36,3 +36,7 @@ PLAN:
 *. do allow primary source inference to look at constructor sourcemap
 	[don't bother with legacy AST or runtime sourcemap]
 	if using alternate plan: use legacyAST rather than sourcemap
+
+ALTERNATE ALTERNATE PLAN: (currently looking most plausible)
+do *not* allow corresponding sources not to exist, but *do* do a repair using
+the src from the constructor source map, so things work back to 0.3.6

@@ -1,0 +1,31 @@
+Does the bug apply to strings & bytestrings, or only to structs?
+Does the bug apply on return only, or also on input?  Also on logging?
+
+On return, the bug definitely only applies to structs, not to
+strings or bytestrings.  Note that while the encoding is wrong, the ABI JSON is
+also wrong in the same way.
+
+Note that, using e.g. ethers, return values affected by this bug will still
+mostly decode correctly (you'll get a Result, with its extra fields, rather
+than a plain object); but also note that this mishap will occur even if the
+struct has no dynamic components.
+
+On logging, it's the same... *however*, despite encoding being done incorrectly,
+the signature is computed correctly (although not correctly for what was
+actually emitted).  (And the ABI JSON is, um... malformed?? D:  But in a way
+that results in the correct signature by tools that don't care.)
+
+(It's worse than that: The ABI JSON is *still* malformed as of 0.3.0!!  Even
+though what was emitted was fixed.  *And*, the malformation applies to *all*
+structs in events, not just ones that are alone!!  So uh events with structs in
+them don't decode. :-/ )
+
+On input, the bug does not apply; the ABI is done correctly there.  Also note
+(although it's not really relevant, if you think about it) that the only
+structs that would cause an incorrect encoding were *disallowed* on input prior
+to 0.3.0. :P
+
+On decoding a *returned* value, obviously the bug applies, but as long as you're
+only using buggy Vyper, that won't matter.
+
+And that's how it's possible this bug wasn't caught!
