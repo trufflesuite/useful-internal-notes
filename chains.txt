@@ -1,7 +1,8 @@
 big list:
+https://chainid.network/chains.json
+old list:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
-old URL:
-https://github.com/ethereum/sourcify/blob/master/chains.json
+
 
 sourcify currently supports:
 chainID	name		networkID
