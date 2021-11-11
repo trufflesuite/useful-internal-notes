@@ -1,3 +1,6 @@
+0.3.0 rearranged internal function params & constructor params
+0.3.0 removed spaces after strings (affects both memory and storage)
+
 Storage rearranged in 0.2.13
 
 Source maps added in: 0.1.0-beta.7

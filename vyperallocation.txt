@@ -33,6 +33,7 @@ storage [as of 0.2.13] works how?
 	*. what's more, strings/bytestrings are now inline too! and they still
 		skip an extra word after the end of what you'd think would be
 		the allotted space...
+		NOTE: As of 0.3.0, they no longer do!!
 
 Note: The reentrancy lock info is stored directly after the variables!
 However in 0.2.13 this isn't done properly and it overlaps them instead :P
@@ -57,23 +58,28 @@ memory works how? [internal function parameters and local variables...]
 		way, they're handled separately here as calldata)
 		I guess external functions would be allocated on hitting the
 		Module, and that would work for old versions as well...?
-	*. internal function parameters go on in order, starting at 0x140;
+	*. internal function parameters go on in order, starting at [somewhere];
 		this happens in the unmapped code inbetween the function def
 		and the function body.  first the return address goes on (but
 		it goes *after* the params), then the params go on in order
 		(starting at 0x140, *before* the address)
 		Note that the address push comes immediately after the def node,
 		So you can use that as a reference point (or just use 0x140?
-		but probably shouldn't rely on that)
-		[except actually I think we should]
+		but probably shouldn't rely on that) [well we could before 0.3.0
+		but as of 0.3.0 it's not always 0x140 and there's no address in
+		memory!!]
 			*. EXCEPTION: strings/bytesrings work weird in interal
 			fn params.  Where you would expect the string to be,
 			instead is a (one-word) *useless* pointer.  Don't use
 			the pointer, it's crap!  Instead strings go *after*
 			the return address.  As usual there's a junk word after
 			each one.
+			*. NOTE: they now work like normal in 0.3.0
+			*. BUT in 0.3.0 our old mechanism is gone!! addresses
+				no longer in memory...
 		__init__ params, and old external fn params, also work this way
 		except for no return address inbetween non-strings & strings
+		[back when that was a thing]
 	*. external function parameters do not go in memory!
 		NOTE: this is as of 0.1.0b11; before that I assume they worked
 		like internal function parameters.  However currently we only
@@ -89,6 +95,7 @@ memory works how? [internal function parameters and local variables...]
 		on type, it seems (although it's always one *more* than is
 		necessary, oddly).  No pointers!  Assigning to one overwrites
 		at same place!
+		NOTE: As of 0.3.0, the extra word is gone!!
 		*. The extra word should *not* be counted as part of the string
 			as it sometimes contains unrelated data
 		*. EXCEPT: When passed as (internal) function arguments, they
