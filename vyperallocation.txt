@@ -35,6 +35,9 @@ storage [as of 0.2.13] works how?
 		the allotted space...
 		NOTE: As of 0.3.0, they no longer do!!
 
+immutables work how?
+	*. they go after the bytecode (in order, presumably) in padded form
+
 Note: The reentrancy lock info is stored directly after the variables!
 However in 0.2.13 this isn't done properly and it overlaps them instead :P
 See vyperlock.txt for more info
