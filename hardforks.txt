@@ -15,7 +15,8 @@ Istanbul		CHAINID, SELFBALANCE; precompile 0x09
 Muir Glacier		none
 Berlin			none
 London			BASEFEE
-[Arrow Glacier]		none
+Arrow Glacier		none
+[Merge]			DIFFICULTY changed to RANDOM
 
 Fork name		Gas changes
 ---------		-----------
@@ -32,7 +33,8 @@ Istanbul		(C); SSTORE OOGs <=stipend; ↓data; ↓0x06-0x08; ↑various
 Muir Glacier		none
 Berlin			↓0x05; state read changes (↑cold, ↓hot); access lists
 London			Rework transaction fees; reduce refund cap
-[Arrow Glacier]		none
+Arrow Glacier		none
+[Merge]			none
 
 Fork name		Other changes
 ---------		-------------
@@ -49,7 +51,7 @@ Istanbul		none
 Muir Glacier		Nothing I care about
 Berlin			Typed transactions
 London			Creations revert on return if created starts w/ 0xef
-[Arrow Glacier]		Nothing I care about
+Arrow Glacier		Nothing I care about
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
@@ -66,7 +68,8 @@ Istanbul		Solidity, Vyper
 Muir Glacier		
 Berlin			Solidity
 London			Solidity
-[Arrow Glacier]
+Arrow Glacier
+[Merge]
 
 Future hardforks will (ordinarily) be named after Devcon locations
 
