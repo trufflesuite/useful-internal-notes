@@ -1,5 +1,11 @@
 The Vyper reentrancy lock is stored after the storage variables.
+(not anymore! it's now stored *before*! see below about versions)
 
 Each separate lock is stored as a boolean taking up a full word (just the low
 bit is used.)
 The order of the locks is the order of the first function that uses them.
+NOTE: 0.2.15-0.3.0 have a problem where locks that are the same aren't combined!
+
+<=0.2.14: locks stored after vars (but 0.2.13 is messed up)
+0.2.15-0.3.0: locks stored before vars, but failure to combine!
+>=0.3.1: locks stored before vars, and now done properly

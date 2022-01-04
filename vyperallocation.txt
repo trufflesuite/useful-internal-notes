@@ -39,7 +39,8 @@ immutables work how?
 	*. they go after the bytecode (in order, presumably) in padded form
 
 Note: The reentrancy lock info is stored directly after the variables!
-However in 0.2.13 this isn't done properly and it overlaps them instead :P
+WARNING: This changed in 0.2.15 (TODO), now it's stored *before* the variables!
+Also in 0.2.13 this isn't done properly and it overlaps them instead :P
 See vyperlock.txt for more info
 
 memory works how? [internal function parameters and local variables...]
