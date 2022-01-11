@@ -1,25 +1,40 @@
 big list:
-https://chainid.network/chains.json
-old list:
+https://chainlist.org/chains.json
+old list: [has some things the big list doesn't!]
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
 
 
 sourcify currently supports:
-chainID	name		networkID
-1	mainnet		1
-3	ropsten		3
-4	rinkeby		4
-5	goerli		5
-42	kovan		42
-56	binance mainnet	56
-77	sokol		77
-97	binance testnet	97
-100	xdai		100
-137	matic mainnet	137
-42220	celo mainnet	42220
-44787	celo alfajores	44787
-62320	celo baklava	62320
-80001	matic mumbai	80001
+chainID		name			networkID
+1		mainnet			1
+3		ropsten			3
+4		rinkeby			4
+42		kovan			42
+5		goerli			5
+100		xdai			100
+77		sokol			77
+56		binance mainnet		56
+97		binance testnet		97
+137		matic mainnet		137
+80001		matic mumbai		80001
+42220		celo mainnet		42220
+44787		celo alfajores		44787
+62320		celo baklava		62320
+43113		avalanche fuji		1 (!!) [this may be an error?]
+43114		avalanche mainnet	43114 [also seen reported as 1...?]
+42161		arbitrum mainnet	42161
+421611		arbitrum rinkeby	421611
+40		telos mainnet		40
+41		telos testnet		41
+8		ubiq			8 [also seen reported as 88...?]
+4216137055	oneledger frankenstein	4216137055
+5700		syscoin tanenbaum	5700
+10		optimistic mainnet	10
+69		optimistic kovan	69
+288		boba mainnet		288
+28		boba rinkeby		28
+106		velas			106
+82		meter			82
 
 etherscan currently supports: (at least, there may be more)
 [not counting things like binance that are on a different domain]
