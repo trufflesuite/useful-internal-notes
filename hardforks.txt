@@ -52,6 +52,7 @@ Muir Glacier		Nothing I care about
 Berlin			Typed transactions
 London			Creations revert on return if created starts w/ 0xef
 Arrow Glacier		Nothing I care about
+[Merge]			Nothing I care about
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
