@@ -1,5 +1,7 @@
 [see also ancientversions.txt for more]
 
+the event empty string encoding bug was fixed in 0.7.6
+
 error codes were introduced in 0.6.10
 
 most recent "we forgot to fix the padding" bug: fixed in 0.4.25!
