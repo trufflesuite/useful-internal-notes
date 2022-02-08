@@ -15,6 +15,9 @@ Ways to revert/exceptional halt, other than instareverts (instacall.txt):
 	*. doing a LOG0, LOG1, LOG2, LOG3, LOG4
 	*. doing a CALL or CALLCODE with nonzero value
 *. a creation returns a contract beginning with 0xef (as of London)
+	*. ...that is not valid EOF (as of Shanghai)
+	*. note that EOF disallows empty contracts, and contracts that can run
+		off or have short pushData (must end on terminating instruction)
 -----
 Things *not* reverted by an exceptional halt or revert:
 
