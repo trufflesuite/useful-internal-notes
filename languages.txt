@@ -16,6 +16,7 @@ bool
 uint256 [called num256 in ancient versions]
 int128 [called num in ancient versions]
 int256 [as of 0.2.12]
+uint8 [as of 0.3.1]
 decimal (= fixed168x10)
 address
 * unit types (= some numeric type; varies, can make custom ones)
@@ -41,6 +42,29 @@ What would need to be added for decoding?
 
 LLL: does not have types internally!
 but encourages users to use the ABI :P
+
+Reach: this seems pretty well developed! does it use the ABI? unclear ATM
+[I think it doesn't?]
+Null [can you actually declare variables of this type?]
+Bool
+UInt
+Bytes(length) [it says "at most" but it seems to mean "exactly"]
+Digest [I think this is like a bytes32??]
+Address
+Token [what is this exactly?]
+Fun([Domain_0, ..., Domain_N], Range) [how do these work?]
+Fun(true, Range) [how the hell do *these* work??]
+Tuple(Field_0, ..., Field_N)
+Object({key_0: Type_0, ..., key_N: Type_N})
+Struct([[key_0, Type_0, ..., key_N: Type_N]])
+	objects & structs differ in that objects have no order on the fields?
+Array(Type, size) [no dynamic version I see]
+Data({variant_0: Type_0, ..., variant_N: Type_N}) [a tagged union!]
+Refine(Type, Predicate, ?Message)
+Refine(FunType, Precondition, Postcondition, ?Message)
+Int [constructed, not primitive]
+FixedPoint [constructed, not primitive; not clear what the bounds are]
+[interestingly, there's no separate string type]
 
 Zinc: This does target the EVM, right...?
 Types:
@@ -258,3 +282,5 @@ ADICO: just a paper
 ink!: doesn't target EVM
 
 Egelund-Muller etc: just a paper
+
+Sway: I can't find anything about this
