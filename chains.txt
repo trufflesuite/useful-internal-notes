@@ -26,8 +26,9 @@ chainID		name			networkID
 421611		arbitrum rinkeby	421611
 40		telos mainnet		40
 41		telos testnet		41
-8		ubiq			8 [also seen reported as 88...?]
+8		ubiq			8 [used to be 88]
 4216137055	oneledger frankenstein	4216137055
+57		syscoin	mainnet		57
 5700		syscoin tanenbaum	5700
 10		optimistic mainnet	10
 69		optimistic kovan	69
@@ -35,6 +36,9 @@ chainID		name			networkID
 28		boba rinkeby		28
 106		velas			106
 82		meter			82
+83		meter testnet		83
+1313161554	aurora			1313161554
+1313161555	aurora testnet		1313161555
 
 etherscan currently supports: (at least, there may be more)
 [not counting things like binance that are on a different domain]
@@ -54,9 +58,31 @@ chainID	name			networkID	subdomain
 
 etherscan's ftmscan.com supports:
 chainID	name			networkID	subdomain
-250	fantom			250		[none]
+250	fantom mainnet		250		[none]
+4002	fantom testnet		4002		testnet
 
-etherscan's polygonscam.com supports:
+etherscan's polygonscan.com supports:
 chainID	name			networkID	subdomain
 137	matic mainnet		137		[none]
 80001	matic mumbai		80001		mumbai
+
+etherscan's arbiscan.io supports:
+chainID	name			networkID	subdomain
+42161	arbitrum mainnet	42161		[none]
+42161	arbitrum rinkeby	421611		testnet [!]
+
+etherscan's snowtrace.io supports:
+chainID	name			networkID	subdomain
+43114	avalanche mainnet	43114		[none]
+43113	avalanche fuji		1...?		testnet [!]
+
+etherscan's hecoinfo.com supports:
+chainID	name			networkID	subdomain
+128	heco mainnet		128		[none]
+256	heco testnet		256		testnet
+
+etherscan's moonscan.io supports:
+chainID	name			networkID	subdomain
+1284	moonbeam		1284		[none]
+1285	moonriver		1285		moonriver
+1287	moonbase alpha		1287		moonbase
