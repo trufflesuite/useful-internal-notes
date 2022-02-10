@@ -83,6 +83,6 @@ chainID	name			networkID	subdomain
 
 etherscan's moonscan.io supports:
 chainID	name			networkID	subdomain
-1284	moonbeam		1284		[none]
+1284	moonbeam		1284		[none, but api is api-moonbeam!]
 1285	moonriver		1285		moonriver
 1287	moonbase alpha		1287		moonbase
