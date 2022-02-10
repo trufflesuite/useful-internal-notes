@@ -15,8 +15,8 @@ chainID		name			networkID
 77		sokol			77
 56		binance mainnet		56
 97		binance testnet		97
-137		matic mainnet		137
-80001		matic mumbai		80001
+137		polygon mainnet		137
+80001		polygon mumbai		80001
 42220		celo mainnet		42220
 44787		celo alfajores		44787
 62320		celo baklava		62320
@@ -63,8 +63,8 @@ chainID	name			networkID	subdomain
 
 etherscan's polygonscan.com supports:
 chainID	name			networkID	subdomain
-137	matic mainnet		137		[none]
-80001	matic mumbai		80001		mumbai
+137	polygon mainnet		137		[none]
+80001	polygon mumbai		80001		mumbai
 
 etherscan's arbiscan.io supports:
 chainID	name			networkID	subdomain
