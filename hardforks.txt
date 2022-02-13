@@ -3,6 +3,7 @@ https://github.com/ethereum/eth1.0-specs/blob/master/network-upgrades/mainnet-up
 Fork name		Opcodes and precompiles added
 ---------		-----------------------------
 Frontier		All opcodes from initial release; precompiles 0x01-0x04
+Frontier Thawing	none
 Ice Age			none
 Homestead		DELEGATECALL
 DAO Fork		none
@@ -22,6 +23,7 @@ Arrow Glacier		none
 Fork name		Gas changes
 ---------		-----------
 Frontier		Initial release
+Frontier Thawing	none
 Ice Age			none
 Homestead		Contract creation base cost added
 DAO Fork		none
@@ -41,6 +43,7 @@ Arrow Glacier		none
 Fork name		Other changes
 ---------		-------------
 Frontier		Initial release
+Frontier Thawing	Nothing I care about
 Ice Age			Nothing I care about
 Homestead		Code-deposit can OOG
 DAO Fork		Cancels DAO hack
@@ -60,6 +63,7 @@ Arrow Glacier		Nothing I care about
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
 Frontier		
+Frontier Thawing
 Ice Age			
 Homestead		Solidity
 DAO Fork		
@@ -75,6 +79,11 @@ London			Solidity
 Arrow Glacier
 [Shanghai]
 [Merge]
+
+Changes made without a hardfork
+-------------------------------
+EIP 2681: nonce limited to 64 bits (causes fail/revert if would overflow)
+EIP 3607: reject transactions from accounts with code
 
 Future hardforks will (ordinarily) be named after Devcon locations
 
