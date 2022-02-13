@@ -48,7 +48,7 @@ Ice Age			Nothing I care about
 Homestead		Code-deposit can OOG
 DAO Fork		Cancels DAO hack
 Tangerine Whistle	none
-Spurious Dragon		Code size limit; account deletion; other stuff
+Spurious Dragon		Code size limit; contract nonce=1; acct deletion; more
 Byzantium		Return status in receipt; other stuff
 Constantinople		Nothing I care about
 Petersburg		none

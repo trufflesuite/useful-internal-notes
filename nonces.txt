@@ -1,9 +1,10 @@
 a nonce is incremented when:
-*. a contract is *successfully* created at the account (on return)
-	[but this can be reverted by a containing stackframe]
 *. the account originates a tx (on call), *even if it reverts*
 *. the account runs a CREATE or CREATE2 (on call), *even if it reverts*
 	[but this can itself be reverted by a containing stackframe]
+*. a contract is created at a given address (on call, but reverted if fails)
+	[as of Spurious Dragon! false before!]
+	[and this can be reverted by a containing stackframe]
 
 Note: Remember that storage address is what has nonce incremented, relevant for
 DELEGATECALL or CALLCODE!
