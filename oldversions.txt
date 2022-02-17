@@ -1,5 +1,7 @@
 [see also ancientversions.txt for more]
 
+Yul got immutableReferences in 0.8.12
+
 the event empty string encoding bug was fixed in 0.7.6
 
 error codes were introduced in 0.6.10
