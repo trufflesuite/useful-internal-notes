@@ -1,7 +1,6 @@
 big list:
-https://chainlist.org/chains.json
-old list: [has some things the big list doesn't!]
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
+there's also https://chainlist.org/chains.json but it seems to be worse
 
 
 sourcify currently supports:
