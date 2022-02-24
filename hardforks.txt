@@ -18,7 +18,7 @@ Berlin			none
 London			BASEFEE
 Arrow Glacier		none
 [Shanghai]		PUSH0
-[Merge]			DIFFICULTY changed to RANDOM
+[Merge]			DIFFICULTY changed to PREVRANDAO
 
 Fork name		Gas changes
 ---------		-----------
