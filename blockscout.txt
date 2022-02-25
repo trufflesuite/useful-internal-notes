@@ -1,0 +1,7 @@
+Blockscout's GraphQL api seems to be missing # of runs??
+
+meanwhile it's non-GraphQL api seems to be *almost* the same as Etherscan's but
+not quite; the runs field is called something different
+
+however that's in the single-source case; no idea what it does in the JSON case,
+the sourcify case, or the Vyper case
