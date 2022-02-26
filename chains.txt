@@ -10,7 +10,7 @@ chainID		name			networkID
 4		rinkeby			4
 42		kovan			42
 5		goerli			5
-100		xdai			100
+100		xdai (gnosis)		100
 77		sokol			77
 56		binance mainnet		56
 97		binance testnet		97
@@ -85,3 +85,22 @@ chainID	name			networkID	subdomain
 1284	moonbeam		1284		[none, but api is api-moonbeam!]
 1285	moonriver		1285		moonriver
 1287	moonbase alpha		1287		moonbase
+
+blockscout currently supports:
+chainID	name			networkID	suffix
+1	mainnet			1		/eth/mainnet
+61	ethereum classic	1 (!)		/etc/mainnet
+100	xdai (gnosis)		100		/xdai/mainnet
+???	gnosis testnet		???		/xdai/testnet [WHAT IS THIS]
+200	arbitrum on xdai	200		/xdai/aox
+???	optimism on gnosis	???		/xdai/optimism [WHAT IS THIS]
+99	core			99		/poa/core
+77	sokol			77		/poa/sokol
+30	RSK mainnet		30		/rsk/mainnet
+246529	ARTIS sigma1		246529		/artis/sigma1
+22 (!!)	LUKSO L14		???		/lukso/l14 [WHAT IS THIS]
+
+This 22 chain ID seems to *also* be used by Elastos mainnet!
+
+bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
+(it was also probably not made by them despite resembling them)
