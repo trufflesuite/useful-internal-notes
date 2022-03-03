@@ -5,3 +5,100 @@ not quite; the runs field is called something different
 
 however that's in the single-source case; no idea what it does in the JSON case,
 the sourcify case, or the Vyper case
+
+blockscout error case: (seems to sometimes happen for no reason?)
+(a good reason not to turn this on by default :P )
+{
+  message: "Something went wrong.",
+  result: null,
+  status: "0"
+}
+
+blockscout not verified case:
+{
+  message: "OK",
+  status: "1",
+  result: [{
+    ABI: "Contract source code not verified",
+    ...
+  }]
+}
+
+blockscout single source case:
+{
+  message: "OK",
+  status: "1",
+  result: [{
+    ABI: string; //(JSON)
+    CompilerVersion: string;
+    ConstructorArguments?: string; //no leading 0x, excluded if empty
+    ContractName: string;
+    EVMVersion: string | null; //uses "default", lowercase, but can be null...?
+    ExternalLibraries?: { //not stringly-typed, thank god!
+      address_hash: string; //address
+      name: string;
+    }[]; //not included if there are none
+    FileName: "";
+    ImplementationAddress?: string; //only included if IsProxy is true
+    IsProxy: string; //"true" or "false" (!)
+    OptimizationRuns?: number | null; //I assume null means default? (excluded
+	//altogether if optimization not used)
+    OptimizationUsed: string; //"true" or "false" (!)
+    SourceCode: string; //note: there's no header unlike w/Etherscan
+    Address: string;
+  }]
+}
+
+blockscout vyper case:
+{
+  message: "OK",
+  status: "1",
+  result: [{
+    ABI: string; //(JSON)
+    CompilerVersion: string; //does *not* explicitly indicate Vyper!!
+	//just a short version string
+    ConstructorArguments?: string;
+    ContractName: "Vyper_contract"; //what you enter is ignored
+    EVMVersion: null; //no option to set this
+    FileName: "";
+    ImplementationAddress?: string; //only included if IsProxy is true
+    IsProxy: string; //"true" or "false" (!)
+    OptimizationUsed: "false"; //again, no option to set this
+    SourceCode: string;
+    Address: string;
+  }]
+}
+
+blockscout JSON case: I couldn't get this to work! TODO
+(why do I suspect it's coerced into the format below, which is no good...?)
+
+blockscout metadata-and-sources case: (UH-OH, NO GOOD)
+[but in this case, it also gets verified on Sourcify, so...]
+{
+  message: "OK",
+  status: "1",
+  result: [{
+    ABI: string; //(JSON)
+    AdditionalSources?: { //sources beyond the main file! excluded if none
+      Filename: string; //uses name compiler sees
+      SourceCode: string;
+    }[];
+    CompilerVersion: string;
+    ConstructorArguments?: string;
+    ContractName: string;
+    EVMVersion: string | null;
+    ExternalLibraries?: {
+      address_hash: string; //address
+      name: string;
+    }[];
+    FileName: string; //for the main file! uses name compiler sees
+    ImplementationAddress?: string;
+    IsProxy: string;
+    OptimizationRuns?: number | null;
+    OptimizationUsed: string;
+    SourceCode: string; //for the main file!
+    Address: string;
+  }]
+}
+UH-OH, METADATA IS MISSING
+I did this with debug revert strings on and that's not reflected here!!
