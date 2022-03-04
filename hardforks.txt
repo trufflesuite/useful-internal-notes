@@ -37,7 +37,7 @@ Muir Glacier		none
 Berlin			↓0x05; state read changes (↑cold, ↓hot); access lists
 London			Rework transaction fees; reduce refund cap
 Arrow Glacier		none
-[Shanghai]		Increased gas for initcode
+[Shanghai]		Increased gas for initcode; warm coinbase
 [Merge]			none
 
 Fork name		Other changes
