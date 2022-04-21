@@ -34,6 +34,13 @@ storage [as of 0.2.13] works how?
 		skip an extra word after the end of what you'd think would be
 		the allotted space...
 		NOTE: As of 0.3.0, they no longer do!!
+	*. as of 0.3.2, there are dynamic (bounded) arrays!  these cannot be of
+		strings/bytestrings, or of maps.  these are *also* inline, with
+		the length first
+	*. BUG: In 0.3.2 specifically, one too few slots are allocated for
+		dynamic arrays, and it overlaps the next thing!!
+		(Q: is this slots or elements? it's slots)
+		(presumably this will be fixed in 0.3.3...)
 
 immutables work how?
 	*. they go after the bytecode (in order, presumably) in padded form
@@ -158,13 +165,14 @@ blocks, so you can treat it somewhat similarly to Yul
 (see vyperast.txt)
 
 -----
-vyper globals, as of 0.2.x:
+vyper globals, as of 0.3.x:
 self [address]
 msg.gas [ugh] [uint256]
 msg.data [special!! type Bytes, not usable otherwise] //added in 0.2.12
 msg.sender [address]
 msg.value [uint256] [previously uint256(wei)]
 tx.origin [address]
+tx.gasprice [uint256] [added in 0.3.2]
 block.coinbase [address]
 block.difficulty [uint256]
 block.number [uint256]
