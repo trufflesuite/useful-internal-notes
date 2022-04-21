@@ -17,8 +17,8 @@ Muir Glacier		none
 Berlin			none
 London			BASEFEE
 Arrow Glacier		none
-[Shanghai]		PUSH0
 [Paris]			DIFFICULTY changed to PREVRANDAO
+[Shanghai]		PUSH0
 
 Fork name		Gas changes
 ---------		-----------
@@ -37,8 +37,8 @@ Muir Glacier		none
 Berlin			↓0x05; state read changes (↑cold, ↓hot); access lists
 London			Rework transaction fees; reduce refund cap
 Arrow Glacier		none
-[Shanghai]		Increased gas for initcode; warm coinbase
 [Paris]			none
+[Shanghai]		Increased gas for initcode; warm coinbase
 
 Fork name		Other changes
 ---------		-------------
@@ -77,8 +77,8 @@ Muir Glacier
 Berlin			Solidity
 London			Solidity
 Arrow Glacier
-[Shanghai]
 [Paris]
+[Shanghai]
 
 Changes made without a hardfork
 -------------------------------
