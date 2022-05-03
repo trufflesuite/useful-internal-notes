@@ -2,7 +2,6 @@ big list:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
 there's also https://chainlist.org/chains.json but it seems to be worse
 
-
 sourcify currently supports:
 chainID		name			networkID
 1		mainnet			1
@@ -10,8 +9,9 @@ chainID		name			networkID
 4		rinkeby			4
 42		kovan			42
 5		goerli			5
+11155111	sepolia			11155111
 100		xdai (gnosis)		100
-77		sokol			77
+77		poa sokol		77
 56		binance mainnet		56
 97		binance testnet		97
 137		polygon mainnet		137
@@ -19,8 +19,8 @@ chainID		name			networkID
 42220		celo mainnet		42220
 44787		celo alfajores		44787
 62320		celo baklava		62320
-43113		avalanche fuji		1 (!!) [this may be an error?]
-43114		avalanche mainnet	43114 [also seen reported as 1...?]
+43113		avalanche fuji		43113 [used to be 1!]
+43114		avalanche mainnet	43114
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611
 40		telos mainnet		40
@@ -38,6 +38,12 @@ chainID		name			networkID
 83		meter testnet		83
 1313161554	aurora			1313161554
 1313161555	aurora testnet		1313161555
+122		fuse			122
+1284		moonbeam		1284
+1285		moonriver		1285
+1287		moonbase alpha		1287
+11297108109	palm			11297108109
+11297108099	palm testnet		11297108099
 
 etherscan currently supports: (at least, there may be more)
 [not counting things like binance that are on a different domain]
@@ -73,7 +79,7 @@ chainID	name			networkID	subdomain
 etherscan's snowtrace.io supports:
 chainID	name			networkID	subdomain
 43114	avalanche mainnet	43114		[none]
-43113	avalanche fuji		1...?		testnet [!]
+43113	avalanche fuji		43113 [not 1!]	testnet [!]
 
 etherscan's hecoinfo.com supports:
 chainID	name			networkID	subdomain
@@ -86,6 +92,35 @@ chainID	name			networkID	subdomain
 1285	moonriver		1285		moonriver
 1287	moonbase alpha		1287		moonbase
 
+etherscan's hooscan.com supports:
+chainId	name			networkID	subdomain
+70	hoo mainnet		70		[none]
+
+etherscan's cronoscan.com supports:
+chainId	name			networkID	subdomain
+25	cronos mainnet		25		[none]
+
+etherscan's bttcscan.com supports:
+chainId	name			networkID	subdomain
+199	bttc mainnet		199		[none]
+1029	bttc donau		1029		testnet [!]
+
+etherscan's aurorascan.dev supports:
+chainId		name			networkID	subdomain
+1313161554	aurora			1313161554	[none]
+1313161555	aurora testnet		1313161555	testnet
+
+etherscan's celoscan.xyz supports:
+chainId	name			networkID	subdomain
+42220	celo mainnet		42220		[none]
+44787	celo alfajores		44787		alfajores
+
+etherscan's clvscan.com supports:
+chainId	name			networkID	subdomain
+1024	clover mainnet		1024		[none]
+
+---ignore stuff below, we're not doing blockscout
+
 blockscout currently supports:
 chainID	name			networkID	suffix
 1	mainnet			1		/eth/mainnet
@@ -93,14 +128,14 @@ chainID	name			networkID	suffix
 100	xdai (gnosis)		100		/xdai/mainnet
 ???	gnosis testnet		???		/xdai/testnet [WHAT IS THIS]
 200	arbitrum on xdai	200		/xdai/aox
-???	optimism on gnosis	???		/xdai/optimism [WHAT IS THIS]
-99	core			99		/poa/core
-77	sokol			77		/poa/sokol
+300	optimism on gnosis	300		/xdai/optimism
+99	poa core		99		/poa/core
+77	poa sokol		77		/poa/sokol
 30	RSK mainnet		30		/rsk/mainnet
 246529	ARTIS sigma1		246529		/artis/sigma1
 22 (!!)	LUKSO L14		???		/lukso/l14 [WHAT IS THIS]
 
-This 22 chain ID seems to *also* be used by Elastos mainnet!
+This 22 chain ID seems to *also* be used by ELA-DID mainnet!
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
