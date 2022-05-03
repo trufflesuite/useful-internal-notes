@@ -1,6 +1,6 @@
-big list:
+useful lists, neither is necessarily entirely up to date:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
-there's also https://chainlist.org/chains.json but it seems to be worse
+https://chainlist.org/
 
 sourcify currently supports:
 chainID		name			networkID
