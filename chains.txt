@@ -42,7 +42,7 @@ chainID		name			networkID
 1284		moonbeam		1284
 1285		moonriver		1285
 1287		moonbase alpha		1287
-11297108109	palm			11297108109
+11297108109	palm mainnet		11297108109
 11297108099	palm testnet		11297108099
 
 etherscan currently supports: (at least, there may be more)
@@ -136,6 +136,22 @@ chainID	name			networkID	suffix
 22 (!!)	LUKSO L14		???		/lukso/l14 [WHAT IS THIS]
 
 This 22 chain ID seems to *also* be used by ELA-DID mainnet!
+
+blockscout seemingly also has separate sites for:
+42220		celo mainnet		explorer.celo.org
+44787		celo alfajores		alfajores-blocksout.celo-testnet.org
+62320		celo baklava		baklava-blocksout.celo-testnet.org
+57		syscoin mainnet		explorer.syscoin.org
+5700		syscoin tanenbaum	tanenbaum.io
+4216137055	oneledger frankenstein	frankenstein-explorer.oneledger.network
+288		boba mainnet		blockexplorer.boba.network
+28		boba rinkeby		blockexporer.rinkeby.boba.network
+106		velas			evmexplorer.velas.com
+1313161554	aurora mainnet		explorer.mainnet.aurora.dev
+1313161555	aurora testnet		explorer.testnet.aurora.dev
+11297108109	palm mainnet		explorer.palm.io
+11297108099	palm testnet		explorer.palm-uat.xyz
+122		fuse			explorer.fuse.io
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
