@@ -99,6 +99,7 @@ chainId	name			networkID	subdomain
 etherscan's cronoscan.com supports:
 chainId	name			networkID	subdomain
 25	cronos mainnet		25		[none]
+338	cronos testnet		338		testnet
 
 etherscan's bttcscan.com supports:
 chainId	name			networkID	subdomain
@@ -155,3 +156,7 @@ blockscout seemingly also has separate sites for:
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
+
+scan.meter.io has verified contracts... does it have an API for them though?
+similarly with teloscan
+doesn't seem like either of them do
