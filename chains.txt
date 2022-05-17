@@ -1,6 +1,7 @@
-useful lists, neither is necessarily entirely up to date:
+useful lists, note no guarantee any of these are fully up to date:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
 https://chainlist.org/
+https://chainid.network/chains.json
 
 check out https://blockscan.com/ to find all of etherscan's websites
 Sourcify's supported chains:
