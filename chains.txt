@@ -2,6 +2,10 @@ useful lists, neither is necessarily entirely up to date:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
 https://chainlist.org/
 
+check out https://blockscan.com/ to find all of etherscan's websites
+Sourcify's supported chains:
+https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
+
 sourcify currently supports:
 chainID		name			networkID
 1		mainnet			1
@@ -53,7 +57,8 @@ chainID		name			networkID
 11111		wagmi			11111
 
 etherscan currently supports: (at least, there may be more)
-[not counting things like binance that are on a different domain]
+[not counting things like binance that are on a different domain; see below for
+those]
 chainID	name			networkID	subdomain
 1	mainnet			1		[none]
 3	ropsten			3		ropsten
