@@ -26,6 +26,7 @@ chainID		name			networkID
 40		telos mainnet		40
 41		telos testnet		41
 8		ubiq			8 [used to be 88]
+311752642	oneledger mainnet	311752642
 4216137055	oneledger frankenstein	4216137055
 57		syscoin	mainnet		57
 5700		syscoin tanenbaum	5700
@@ -44,6 +45,12 @@ chainID		name			networkID
 1287		moonbase alpha		1287
 11297108109	palm mainnet		11297108109
 11297108099	palm testnet		11297108099
+43		darwinia pangolin	43
+44		darwinia crab		44
+9001		evmos mainnet		9001
+9000		evmos testnet		9000
+62621		multivac		62621
+11111		wagmi			11111
 
 etherscan currently supports: (at least, there may be more)
 [not counting things like binance that are on a different domain]
@@ -88,9 +95,11 @@ chainID	name			networkID	subdomain
 
 etherscan's moonscan.io supports:
 chainID	name			networkID	subdomain
-1284	moonbeam		1284		[none, but api is api-moonbeam!]
+1284	moonbeam		1284		moonbeam*
 1285	moonriver		1285		moonriver
 1287	moonbase alpha		1287		moonbase
+
+*no subdomain also works, but only for the website, not for the API
 
 etherscan's hooscan.com supports:
 chainId	name			networkID	subdomain
@@ -144,6 +153,7 @@ blockscout seemingly also has separate sites for:
 62320		celo baklava		baklava-blocksout.celo-testnet.org
 57		syscoin mainnet		explorer.syscoin.org
 5700		syscoin tanenbaum	tanenbaum.io
+311752642	oneledger mainnet	mainnet-explorer.oneledger.network
 4216137055	oneledger frankenstein	frankenstein-explorer.oneledger.network
 288		boba mainnet		blockexplorer.boba.network
 28		boba rinkeby		blockexporer.rinkeby.boba.network
