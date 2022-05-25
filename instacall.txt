@@ -12,6 +12,9 @@ Things that cause instacalls:
 	TODO: is this an instarevert, or does this cause the containing tx to
 	revert? the spec is unclear
 
+NOTE: it *is* legal to create a contract where there is already a balance!
+what about where there's already a nonce? not sure, expect no, but...
+
 ANOMALOUS SITUATION:
 run off looks like a revert even though it's not!
 I think we need better revert detection
