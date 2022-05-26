@@ -60,66 +60,66 @@ chainID		name			networkID
 etherscan currently supports: (at least, there may be more)
 [not counting things like binance that are on a different domain; see below for
 those]
-chainID	name			networkID	subdomain
-1	mainnet			1		[none]
-3	ropsten			3		ropsten
-4	rinkeby			4		rinkeby
-5	goerli			5		goerli
-42	kovan			42		kovan
-10	optimism mainnet	10		optimistic
-69	optimism kovan		69		kovan-optimistic
+chainID		name			networkID	subdomain
+1		mainnet			1		[none]
+3		ropsten			3		ropsten
+4		rinkeby			4		rinkeby
+5		goerli			5		goerli
+42		kovan			42		kovan
+10		optimism mainnet	10		optimistic
+69		optimism kovan		69		kovan-optimistic
+11155111	sepolia			11155111	sepolia
 
 etherscan's bscscan.com supports:
-chainID	name			networkID	subdomain
-56	binance mainnet		56		[none]
-97	binance testnet		97		testnet
+chainID		name			networkID	subdomain
+56		binance mainnet		56		[none]
+97		binance testnet		97		testnet
 
 etherscan's ftmscan.com supports:
-chainID	name			networkID	subdomain
-250	fantom mainnet		250		[none]
-4002	fantom testnet		4002		testnet
+chainID		name			networkID	subdomain
+250		fantom mainnet		250		[none]
+4002		fantom testnet		4002		testnet
 
 etherscan's polygonscan.com supports:
-chainID	name			networkID	subdomain
-137	polygon mainnet		137		[none]
-80001	polygon mumbai		80001		mumbai
+chainID		name			networkID	subdomain
+137		polygon mainnet		137		[none]
+80001		polygon mumbai		80001		mumbai
 
 etherscan's arbiscan.io supports:
-chainID	name			networkID	subdomain
-42161	arbitrum mainnet	42161		[none]
-42161	arbitrum rinkeby	421611		testnet [!]
+chainID		name			networkID	subdomain
+42161		arbitrum mainnet	42161		[none]
+42161		arbitrum rinkeby	421611		testnet [!]
 
 etherscan's snowtrace.io supports:
-chainID	name			networkID	subdomain
-43114	avalanche mainnet	43114		[none]
-43113	avalanche fuji		43113 [not 1!]	testnet [!]
+chainID		name			networkID	subdomain
+43114		avalanche mainnet	43114		[none]
+43113		avalanche fuji		43113 [not 1!]	testnet [!]
 
 etherscan's hecoinfo.com supports:
-chainID	name			networkID	subdomain
-128	heco mainnet		128		[none]
-256	heco testnet		256		testnet
+chainID		name			networkID	subdomain
+128		heco mainnet		128		[none]
+256		heco testnet		256		testnet
 
 etherscan's moonscan.io supports:
-chainID	name			networkID	subdomain
-1284	moonbeam		1284		moonbeam*
-1285	moonriver		1285		moonriver
-1287	moonbase alpha		1287		moonbase
-
+chainID		name			networkID	subdomain
+1284		moonbeam		1284		moonbeam* [see below]
+1285		moonriver		1285		moonriver
+1287		moonbase alpha		1287		moonbase
 *no subdomain also works, but only for the website, not for the API
 
 etherscan's hooscan.com supports:
-chainId	name			networkID	subdomain
-70	hoo mainnet		70		[none]
+chainId		name			networkID	subdomain
+70		hoo mainnet		70		[none]
 
 etherscan's cronoscan.com supports:
-chainId	name			networkID	subdomain
-25	cronos mainnet		25		[none]
-338	cronos testnet		338		testnet
+chainId		name			networkID	subdomain
+25		cronos mainnet		25		[none]
+338		cronos testnet		338		testnet
 
 etherscan's bttcscan.com supports:
-chainId	name			networkID	subdomain
-199	bttc mainnet		199		[none]
-1029	bttc donau		1029		testnet [!]
+chainId		name			networkID	subdomain
+199		bttc mainnet		199		[none]
+1029		bttc donau		1029		testnet [!]
 
 etherscan's aurorascan.dev supports:
 chainId		name			networkID	subdomain
@@ -127,13 +127,13 @@ chainId		name			networkID	subdomain
 1313161555	aurora testnet		1313161555	testnet
 
 etherscan's celoscan.xyz supports:
-chainId	name			networkID	subdomain
-42220	celo mainnet		42220		[none]
-44787	celo alfajores		44787		alfajores
+chainId		name			networkID	subdomain
+42220		celo mainnet		42220		[none]
+44787		celo alfajores		44787		alfajores
 
 etherscan's clvscan.com supports:
-chainId	name			networkID	subdomain
-1024	clover mainnet		1024		[none]
+chainId		name			networkID	subdomain
+1024		clover mainnet		1024		[none]
 
 ---ignore stuff below, we're not doing blockscout
 
