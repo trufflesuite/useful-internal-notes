@@ -4,6 +4,7 @@ https://chainlist.org/
 https://chainid.network/chains.json
 
 check out https://blockscan.com/ to find all of etherscan's websites
+or better yet, https://etherscan.io/eaas
 Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
 
