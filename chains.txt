@@ -75,8 +75,9 @@ chainID		name			networkID	subdomain
 10		optimism mainnet	10		optimistic
 69		optimism kovan		69		kovan-optimistic
 11155111	sepolia			11155111	sepolia
-DEFUNCT:
-62		morden			2		testnet
+
+etherscan once had morden on testnet.etherscan.io, but I'm not sure it had
+verified contracts...?
 
 etherscan's bscscan.com supports:
 chainID		name			networkID	subdomain
@@ -115,7 +116,7 @@ chainID		name			networkID	subdomain
 1287		moonbase alpha		1287		moonbase
 *no subdomain also works, but only for the website, not for the API
 
-etherscan's hooscan.com supports:
+etherscan's hooscan.com supports: [note: soon to be defunct]
 chainId		name			networkID	subdomain
 70		hoo mainnet		70		[none]
 
