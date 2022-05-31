@@ -13,16 +13,17 @@ Q: I ingored DSLs (such as ink!, but maybe I shouldn't...)? TODO MAYBE
 Vyper: Uses ABI. [types marked * were removed in 0.2.x]
 has types:
 bool
-uint256 [called num256 in ancient versions]
-int128 [called num in ancient versions]
-int256 [as of 0.2.12]
-uint8 [as of 0.3.1]
+uint and int and bytesN types [as of 0.3.2]; types that predate that:
+	uint256 [called num256 in ancient versions]
+	int128 [called num in ancient versions]
+	int256 [as of 0.2.12]
+	uint8 [as of 0.3.1]
+	bytes32
 decimal (= fixed168x10)
 address
 * unit types (= some numeric type; varies, can make custom ones)
 	(must be uint256, int128, or decimal underlying)
 	default ones: timestamp, timedelta, wei_value (all uint256)
-bytes32
 Bytes[n] (bytes of length at most n; in ABI it's bytes) [bytes[n] in 0.1.x]
 	[msg.data has special type just Bytes, but that's special]
 String[n] (string of length at most n; in the ABI it's string)
@@ -31,6 +32,7 @@ type[n]
 structs
 HashMap[key, value] (not ABI, obviously) (legal keys basically same in solidity)
 	[map(key, value) in 0.1.x]
+DynArray[type, bound]
 
 What would need to be added for decoding?
 1. builtin units (timestamp, timedelta, wei_value)
@@ -39,6 +41,8 @@ What would need to be added for decoding?
 	new kind for bytes? intermediate?
 4. string[n]
 	new kind for string? intermediate?
+
+Huff: Just an assembler
 
 LLL: does not have types internally!
 but encourages users to use the ABI :P
