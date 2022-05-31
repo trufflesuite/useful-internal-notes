@@ -4,7 +4,7 @@ https://chainlist.org/
 https://chainid.network/chains.json
 
 check out https://blockscan.com/ to find all of etherscan's websites
-or better yet, https://etherscan.io/eaas
+or better yet, https://etherscan.io/eaas [except that omits cronos testnet?]
 Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
 
@@ -27,6 +27,8 @@ chainID		name			networkID
 62320		celo baklava		62320
 43113		avalanche fuji		43113 [used to be 1!]
 43114		avalanche mainnet	43114
+11111		wagmi (avalanche)	11111
+335		dfk test (avalanche)	335
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611
 40		telos mainnet		40
@@ -56,9 +58,12 @@ chainID		name			networkID
 9001		evmos mainnet		9001
 9000		evmos testnet		9000
 62621		multivac		62621
-11111		wagmi			11111
+534		candle			534
+192837465	gather mainnet		192837465
+486217935	gather devnet		486217935
+356256156	gather testnet		356256156
 
-etherscan currently supports: (at least, there may be more)
+etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
 those]
 chainID		name			networkID	subdomain
@@ -70,6 +75,8 @@ chainID		name			networkID	subdomain
 10		optimism mainnet	10		optimistic
 69		optimism kovan		69		kovan-optimistic
 11155111	sepolia			11155111	sepolia
+DEFUNCT:
+62		morden			2		testnet
 
 etherscan's bscscan.com supports:
 chainID		name			networkID	subdomain
@@ -170,6 +177,9 @@ blockscout seemingly also has separate sites for:
 11297108109	palm mainnet		explorer.palm.io
 11297108099	palm testnet		explorer.palm-uat.xyz
 122		fuse			explorer.fuse.io
+192837465	gather mainnet		explorer.gather.network
+486217935	gather devnet		devnet-explorer.gather.network
+356256156	gather testnet		testnet-explorer.gather.network
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
