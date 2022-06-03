@@ -28,6 +28,7 @@ chainID		name			networkID
 43113		avalanche fuji		43113 [used to be 1!]
 43114		avalanche mainnet	43114
 11111		wagmi (avalanche)	11111
+53935		dfk (avalanche)		53935
 335		dfk test (avalanche)	335
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611
