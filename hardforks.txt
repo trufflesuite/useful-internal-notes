@@ -80,6 +80,7 @@ Muir Glacier
 Berlin			Solidity
 London			Solidity
 Arrow Glacier
+[Gray Glacier]
 [Paris]
 [Shanghai]
 
