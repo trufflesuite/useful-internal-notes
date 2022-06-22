@@ -117,7 +117,7 @@ chainID		name			networkID	subdomain
 1287		moonbase alpha		1287		moonbase
 *no subdomain also works, but only for the website, not for the API
 
-etherscan's hooscan.com supports: [note: soon to be defunct]
+etherscan's hooscan.com supported: [NOW DEFUNCT; TAKEN OVER BY BLOCKSCOUT]
 chainId		name			networkID	subdomain
 70		hoo mainnet		70		[none]
 
@@ -182,6 +182,7 @@ blockscout seemingly also has separate sites for:
 192837465	gather mainnet		explorer.gather.network
 486217935	gather devnet		devnet-explorer.gather.network
 356256156	gather testnet		testnet-explorer.gather.network
+70		hoo mainnet		hooscan.com
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
