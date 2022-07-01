@@ -4,16 +4,17 @@ https://chainlist.org/
 https://chainid.network/chains.json
 
 check out https://blockscan.com/ to find all of etherscan's websites
-or better yet, https://etherscan.io/eaas [except that omits cronos testnet?]
+or better yet, https://etherscan.io/eaas
 Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
+or here: https://docs.sourcify.dev/docs/chains/
 
 sourcify currently supports:
 chainID		name			networkID
 1		mainnet			1
-3		ropsten			3
+3		ropsten			3 [can't add to, but still there!]
 4		rinkeby			4
-42		kovan			42
+42		kovan			42 [can't add to, but still there!]
 5		goerli			5
 11155111	sepolia			11155111
 100		xdai (gnosis)		100
@@ -30,6 +31,7 @@ chainID		name			networkID
 11111		wagmi (avalanche)	11111
 53935		dfk (avalanche)		53935
 335		dfk test (avalanche)	335
+432201		dexalot (avalanche)	432201
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611
 40		telos mainnet		40
@@ -63,6 +65,10 @@ chainID		name			networkID
 192837465	gather mainnet		192837465
 486217935	gather devnet		486217935
 356256156	gather testnet		356256156
+246		energy web		246
+73799		energy web volta	73799
+71401		godwoken testnet	71401
+103090		crystaleum		1 (!)
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
