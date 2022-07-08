@@ -151,6 +151,11 @@ etherscan's clvscan.com supports:
 chainId		name			networkID	subdomain
 1024		clover mainnet		1024		[none]
 
+etherscan's bobascan.com supports:
+chainId		name			networkID	subdomain
+288		boba mainnet		288		[none]
+28		boba rinkeby		28		testnet [!]
+
 ---ignore stuff below, we're not doing blockscout
 
 blockscout currently supports:
