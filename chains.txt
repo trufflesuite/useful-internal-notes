@@ -69,6 +69,7 @@ chainID		name			networkID
 73799		energy web volta	73799
 71401		godwoken testnet	71401
 103090		crystaleum		1 (!)
+51		xinfin apothem		51
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
