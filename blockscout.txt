@@ -1,4 +1,5 @@
 Blockscout's GraphQL api seems to be missing # of runs??
+And EVM version??
 
 meanwhile it's non-GraphQL api is similar to etherscan's but a bit different and
 is described below
@@ -20,6 +21,17 @@ blockscout not verified case:
     ...
   }]
 }
+
+oh wait it changed looks liked?? looks like now it's just
+{
+  message: "OK",
+  status: "1",
+  result: [{
+    Address: string;
+  }]
+}
+
+wait!! it's inconsistent! both behaviors exist, dear god >_>
 
 blockscout single source case:
 {
