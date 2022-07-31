@@ -60,8 +60,8 @@ Berlin			Typed transactions
 London			Creations revert on return if created starts w/ 0xef
 Arrow Glacier		Nothing I care about
 [Gray Glacier]		Nothing I care about
-[Shanghai]		Initcode limit; EOFv1
 [Paris]			The merge! But nothing I care about
+[Shanghai]		Initcode limit; EOFv1
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
