@@ -4,6 +4,7 @@ storage works how? [PRIOR TO 0.2.13; see below for 0.2.13 differences]
 	*. there is no packing; everything uses a full word, even int128!
 		*. signed types (int128, decimal) are fully sign-padded
 		*. bool & address are left-padded (right-aligned), as expected
+		*. similarly with enums [according to docs; didn't check myself]
 	*. there are no multivalue types -- just direct & lookup!
 		[FALSE AS OF 0.2.13; see below]
 	*. arrays (which are static) are stored like Solidity *dynamic* arrays,
@@ -154,6 +155,8 @@ String[n]
 type[n]
 structs
 HashMap[key, value]
+DynArray[type, bound]
+enums
 
 [old names: uint256 was num256 in ancient versions; int128 was num in ancient
 versions; Bytes[n] was bytes[n] in 0.1.x; String[n] was string[n] in 0.1.x;

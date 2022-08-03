@@ -33,6 +33,7 @@ structs
 HashMap[key, value] (not ABI, obviously) (legal keys basically same in solidity)
 	[map(key, value) in 0.1.x]
 DynArray[type, bound]
+enums [as of 0.3.4] [except they're more like sets of enums?]
 
 What would need to be added for decoding?
 1. builtin units (timestamp, timedelta, wei_value)
@@ -41,6 +42,9 @@ What would need to be added for decoding?
 	new kind for bytes? intermediate?
 4. string[n]
 	new kind for string? intermediate?
+5. DynArray[type, bound]
+	intermediate array type...
+6. Vyper's "enums" that are actually sets of enums
 
 Huff: Just an assembler
 
