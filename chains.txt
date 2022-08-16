@@ -43,6 +43,7 @@ chainID		name			networkID
 5700		syscoin tanenbaum	5700
 10		optimistic mainnet	10
 69		optimistic kovan	69
+420		optimistic goerli	420
 288		boba mainnet		288
 28		boba rinkeby		28
 106		velas			106
@@ -67,6 +68,7 @@ chainID		name			networkID
 356256156	gather testnet		356256156
 246		energy web		246
 73799		energy web volta	73799
+71402		godwoken mainnet	71402
 71401		godwoken testnet	71401
 103090		crystaleum		1 (!)
 51		xinfin apothem		51
