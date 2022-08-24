@@ -17,7 +17,7 @@ chainID		name			networkID
 42		kovan			42 [can't add to, but still there!]
 5		goerli			5
 11155111	sepolia			11155111
-100		xdai (gnosis)		100
+100		gnosis			100
 77		poa sokol		77
 56		binance mainnet		56
 97		binance testnet		97
@@ -159,13 +159,17 @@ chainId		name			networkID	subdomain
 288		boba mainnet		288		[none]
 28		boba rinkeby		28		testnet [!]
 
+etherscan's gnosisscan.io supports:
+chainId		name			networkID	subdomain
+100		gnosis			100		[none]
+
 ---ignore stuff below, we're not doing blockscout
 
 blockscout currently supports:
 chainID	name			networkID	suffix
 1	mainnet			1		/eth/mainnet
 61	ethereum classic	1 (!)		/etc/mainnet
-100	xdai (gnosis)		100		/xdai/mainnet
+100	gnosis			100		/xdai/mainnet
 ???	gnosis testnet		???		/xdai/testnet [WHAT IS THIS]
 200	arbitrum on xdai	200		/xdai/aox
 300	optimism on gnosis	300		/xdai/optimism
