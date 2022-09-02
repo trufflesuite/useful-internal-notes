@@ -72,6 +72,7 @@ chainID		name			networkID
 71401		godwoken testnet	71401
 103090		crystaleum		1 (!)
 51		xinfin apothem		51
+420666		kekchain		1 (!)
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
