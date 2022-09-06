@@ -86,7 +86,7 @@ chainID		name			networkID	subdomain
 11155111	sepolia			11155111	sepolia
 10		optimism mainnet	10		optimistic
 69		optimism kovan		69		kovan-optimistic
-420		optimism goerli		420		goerli-optimism
+420		optimism goerli		420		goerli-optimism [!]
 
 etherscan once had morden on testnet.etherscan.io, but I'm not sure it had
 verified contracts...?
