@@ -34,6 +34,7 @@ chainID		name			networkID
 432201		dexalot (avalanche)	432201
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611
+421613		arbitrum goerli		421613
 40		telos mainnet		40
 41		telos testnet		41
 8		ubiq			8 [used to be 88]
@@ -42,7 +43,7 @@ chainID		name			networkID
 57		syscoin	mainnet		57
 5700		syscoin tanenbaum	5700
 10		optimistic mainnet	10
-69		optimistic kovan	69
+69		optimistic kovan	69 [can't add to, but still there!]
 420		optimistic goerli	420
 288		boba mainnet		288
 28		boba rinkeby		28
@@ -73,6 +74,8 @@ chainID		name			networkID
 103090		crystaleum		1 (!)
 51		xinfin apothem		51
 420666		kekchain		1 (!)
+300		optimism on gnosis	300
+7700		canto			7700
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
@@ -109,7 +112,7 @@ chainID		name			networkID	subdomain
 etherscan's arbiscan.io supports:
 chainID		name			networkID	subdomain
 42161		arbitrum mainnet	42161		[none]
-42161		arbitrum rinkeby	421611		testnet [!]
+421611		arbitrum rinkeby	421611		testnet [!]
 
 etherscan's snowtrace.io supports:
 chainID		name			networkID	subdomain
