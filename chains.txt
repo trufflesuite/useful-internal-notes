@@ -113,6 +113,7 @@ etherscan's arbiscan.io supports:
 chainID		name			networkID	subdomain
 42161		arbitrum mainnet	42161		[none]
 421611		arbitrum rinkeby	421611		testnet [!]
+421613		arbitrum goerli		421613		goerli
 
 etherscan's snowtrace.io supports:
 chainID		name			networkID	subdomain
