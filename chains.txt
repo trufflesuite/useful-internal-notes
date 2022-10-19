@@ -18,6 +18,7 @@ chainID		name			networkID
 5		goerli			5
 11155111	sepolia			11155111
 100		gnosis			100
+99		poa core		99
 77		poa sokol		77
 56		binance mainnet		56
 97		binance testnet		97
