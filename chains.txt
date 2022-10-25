@@ -9,6 +9,9 @@ Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
 or here: https://docs.sourcify.dev/docs/chains/
 
+Note: sourcify chains marked with * before chainID are still in staging,
+not yet on master
+
 sourcify currently supports:
 chainID		name			networkID
 1		mainnet			1
@@ -77,6 +80,7 @@ chainID		name			networkID
 420666		kekchain		1 (!)
 300		optimism on gnosis	300
 7700		canto			7700
+*592		astar			592
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
