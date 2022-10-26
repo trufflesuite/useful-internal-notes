@@ -10,7 +10,7 @@ https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chai
 or here: https://docs.sourcify.dev/docs/chains/
 
 Note: sourcify chains marked with * before chainID are still in staging,
-not yet on master
+not yet on master; other notes marked with * mean something similar
 
 sourcify currently supports:
 chainID		name			networkID
@@ -37,7 +37,7 @@ chainID		name			networkID
 335		dfk test (avalanche)	335
 432201		dexalot (avalanche)	432201
 42161		arbitrum mainnet	42161
-421611		arbitrum rinkeby	421611
+421611		arbitrum rinkeby	421611 *[can't add to, but still there!]
 421613		arbitrum goerli		421613
 40		telos mainnet		40
 41		telos testnet		41
