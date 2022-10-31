@@ -116,7 +116,8 @@ chainID		name			networkID	subdomain
 
 etherscan's arbiscan.io supports:
 chainID		name			networkID	subdomain
-42161		arbitrum mainnet	42161		[none]
+42161		arbitrum one		42161		[none]
+42170		arbitrum nova		42170		nova
 421611		arbitrum rinkeby	421611		testnet [!]
 421613		arbitrum goerli		421613		goerli
 
@@ -173,6 +174,8 @@ chainId		name			networkID	subdomain
 etherscan's gnosisscan.io supports:
 chainId		name			networkID	subdomain
 100		gnosis			100		[none]
+
+aptoscan.com is ignored as it doesn't allow contract verification
 
 ---ignore stuff below, we're not doing blockscout
 
