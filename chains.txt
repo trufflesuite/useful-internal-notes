@@ -37,7 +37,7 @@ chainID		name			networkID
 335		dfk test (avalanche)	335
 432201		dexalot (avalanche)	432201
 42161		arbitrum mainnet	42161
-421611		arbitrum rinkeby	421611 *[can't add to, but still there!]
+421611		arbitrum rinkeby	421611 [can't add to, but still there!]
 421613		arbitrum goerli		421613
 40		telos mainnet		40
 41		telos testnet		41
@@ -80,8 +80,8 @@ chainID		name			networkID
 420666		kekchain		1 (!)
 300		optimism on gnosis	300
 7700		canto			7700
-*592		astar			592
-*1001		klaytn baobab		1001
+592		astar			592
+1001		klaytn baobab		1001
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
