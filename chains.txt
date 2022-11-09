@@ -81,6 +81,7 @@ chainID		name			networkID
 300		optimism on gnosis	300
 7700		canto			7700
 *592		astar			592
+*1001		klaytn baobab		1001
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
