@@ -19,7 +19,7 @@ London			BASEFEE
 Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
-[Shanghai]		PUSH0
+[Shanghai]		PUSH0, TSTORE, TLOAD
 
 Fork name		Gas changes
 ---------		-----------
