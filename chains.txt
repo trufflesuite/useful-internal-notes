@@ -21,6 +21,8 @@ chainID		name			networkID
 5		goerli			5
 11155111	sepolia			11155111
 100		gnosis			100
+*10200		gnosis chiado		10200
+300		optimism on gnosis	300
 99		poa core		99
 77		poa sokol		77
 56		binance mainnet		56
@@ -78,11 +80,11 @@ chainID		name			networkID
 103090		crystaleum		1 (!)
 51		xinfin apothem		51
 420666		kekchain		1 (!)
-300		optimism on gnosis	300
 7700		canto			7700
 592		astar			592
 *8217		klaytn cypress		8217
 1001		klaytn baobab		1001
+*336		shiden			336
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
