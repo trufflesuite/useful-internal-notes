@@ -8,6 +8,8 @@ or better yet, https://etherscan.io/eaas
 Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
 or here: https://docs.sourcify.dev/docs/chains/
+Subscan: https://www.subscan.io/network_list
+(or just https://www.subscan.io/ and click on "networks" up top)
 
 Note: sourcify chains marked with * before chainID are still in staging,
 not yet on master; other notes marked with * mean something similar
@@ -82,9 +84,9 @@ chainID		name			networkID
 420666		kekchain		1 (!)
 7700		canto			7700
 592		astar			592
+*336		astar shiden		336
 *8217		klaytn cypress		8217
 1001		klaytn baobab		1001
-*336		shiden			336
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
@@ -179,7 +181,98 @@ etherscan's gnosisscan.io supports:
 chainId		name			networkID	subdomain
 100		gnosis			100		[none]
 
-aptoscan.com is ignored as it doesn't allow contract verification
+aptoscan.com is ignored as it isn't EVM and doesn't allow verification
+
+---what about subscan?
+
+chainId		name			networkID	subdomain
+592		astar			592		astar
+336		astar shiden		336		shiden
+81		astar shibuya		81		shibuya		[???]
+1284		moonbeam		1284		moonbeam
+1285		moonriver		1285		moonriver
+1287		moonbase alpha		1287		moonbase
+46		darwinia		46		darwinia
+44		darwinia crab		44		crab
+43		darwinia pangolin	43		pangolin
+45		darwinia pangoro	45		pangoro
+
+NOTE: Shibuya isn't in the usual chains.json!  That one lists 81 as being
+the Zenith testnet Vilnius...
+
+//ones that aren't EVM or don't allow verification:
+name			subdomain
+polkadot		polkadot
+acala			acala
+bifrost			bifrost
+centrifuge		centrifuge
+clover parachain	clv
+composable		composable
+darwinia parachain	darwinia-parachain
+efinity			efinity
+equilibrium		equilibrium
+HydraDX			hydradx
+interlay		interlay
+KILT spiritnet		spiritnet
+nodle			nodle
+parallel		parallel
+phala			phala
+statemint		statemint
+unique			unique
+kusama			kusama
+altair			altair
+basilisk		basilisk
+bifrost kusama		bifrost-kusama
+calamari		calamari
+crab parachain		crab-parachain
+datahighway tanganika	datahighway
+encointer		encointer
+parallel heiko		parallel-heiko
+integritee		integritee
+karura			karura
+khala			khala
+kintsugi		kintsugi
+litmus			litmus
+mangata			mangata
+picasso			picasso
+pioneer			pioneer
+quartz			quartz
+robonomics		robonomics
+crust shadow		shadow
+snow			snow
+statemine		statemine
+turing			turing
+zeitgeist		zeitgeist
+aleph zero		alephzero
+chainx			chainx
+clover			clover
+crust			crust
+crust maxwell		maxwell
+deepbrain chain		dbc
+dock			dock
+edgeware		edgeware
+genshiro		genshiro
+kulupu			kulupu
+polkadex		polkadex
+polymesh		polymesh
+reef			reef
+sakura			sakura
+sora			sora
+stafi			stafi
+rococo			rococo
+bifrost testnet		bifrost-testnet
+dali			dali
+dolphin			dolphin
+mangata testnet		mangata
+pangolin parachain	pangolin-parachain
+rockmine		rockmine
+westend			westend
+acala mandala		acala-testnet
+ICE arctic		arctic
+clover testnet		clover-testnet
+KILT peregrine		kilt-testnet
+polymesh testnet	polymesh-testnet
+subspace gemini		subspace
 
 ---ignore stuff below, we're not doing blockscout
 
@@ -226,3 +319,5 @@ bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 scan.meter.io has verified contracts... does it have an API for them though?
 similarly with teloscan
 doesn't seem like either of them do
+
+
