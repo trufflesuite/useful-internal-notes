@@ -1,0 +1,11 @@
+relevant fields:
+
+source_code //string
+contract_name //string
+compiler_version //string
+evm_version //string; may be "default"
+external_libraries //need to learn the format of this; may be null
+optimize //boolean
+optimization_runs //number; present even if optimize is false
+
+how does external_libraries work?

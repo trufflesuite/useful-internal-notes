@@ -189,11 +189,14 @@ chainId		name			networkID	subdomain
 592		astar			592		astar
 336		astar shiden		336		shiden
 81		astar shibuya		81		shibuya		[???]
+46		darwinia		46		darwinia
+44		darwinia crab		44		crab
+
+//EVM but don't permit verification?
+chainId		name			networkID	subdomain
 1284		moonbeam		1284		moonbeam
 1285		moonriver		1285		moonriver
 1287		moonbase alpha		1287		moonbase
-46		darwinia		46		darwinia
-44		darwinia crab		44		crab
 43		darwinia pangolin	43		pangolin
 45		darwinia pangoro	45		pangoro
 
@@ -274,6 +277,29 @@ KILT peregrine		kilt-testnet
 polymesh testnet	polymesh-testnet
 subspace gemini		subspace
 
+---ignore stuff below, we're not doing blocksscan
+(not to be confused with blockscan)
+https://blocksscan.io/
+
+blocksscan doesn't seem to work very well
+networks:
+xdc (requires dealing with xdc prefix :P )
+velas (not clear if this works)
+wan (works... I think the API isn't good enough though!)
+telos (has no verified contracts...?)
+
+---ignore stuff below, we're not doing ethernal
+https://tryethernal.com/app-chains (search for "they use ethernal")
+(except sourcify chains.json lists more of them?)
+
+explorer.dfkchain.com
+explorer-test.dfkchain.com
+mainnet.num.network
+testnet.num.network
+novascan.io
+
+not sure verification works; not sure the API is documented at all
+
 ---ignore stuff below, we're not doing blockscout
 
 blockscout currently supports:
@@ -312,6 +338,9 @@ blockscout seemingly also has separate sites for:
 486217935	gather devnet		devnet-explorer.gather.network
 356256156	gather testnet		testnet-explorer.gather.network
 70		hoo mainnet		hooscan.com
+[...and so many more, this isn't updated]
+
+---others I've looked into
 
 bittexscan seems like etherscan but it doesn't work (no api) and is dumb :P
 (it was also probably not made by them despite resembling them)
@@ -320,4 +349,8 @@ scan.meter.io has verified contracts... does it have an API for them though?
 similarly with teloscan
 doesn't seem like either of them do
 
+neonscan is an etherscan clone, but the API isn't there, and also what's up
+with its different networks? not willing to do this
 
+caduceus is an etherscan clone, but its API output is worse, and unfortunately
+unusual
