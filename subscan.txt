@@ -1,3 +1,40 @@
+overall format:
+{
+  code: 0,
+  message: "Success",
+  generated_at: number,
+  data: {
+    //see relevant fields below; there are also other irrelevant fields
+  }
+}
+
+case when not verified: one of two things can happen.
+1. data is null
+2. data is
+{
+  abi: null,
+  source_code: "",
+  method_identifiers: null,
+  event_identifiers: null,
+  verify_status: "", <- go by this?
+  contract_name: "",
+  compiler_version: "",
+  evm_version: "",
+  external_libraries: null,
+  optimize: false,
+  optimization_runs: 0,
+}
+(plus irrelevant fields)
+
+case on error:
+{
+  code: nonzero number,
+  message: specific error message,
+  generated_at: number
+}
+(e.g., code 400 for bad address, or code 20008 for rate limit exceeded or
+present-but-bad API key)
+
 relevant fields:
 
 source_code //string
@@ -7,5 +44,7 @@ evm_version //string; may be "default"
 external_libraries //need to learn the format of this; may be null
 optimize //boolean
 optimization_runs //number; present even if optimize is false
+verify_status //not clear what valid values are here; can be "partial" if
+	//verified; what else is possible, "total"?
 
 how does external_libraries work?
