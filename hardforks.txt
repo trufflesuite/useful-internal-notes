@@ -19,7 +19,7 @@ London			BASEFEE
 Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
-[Shanghai]		PUSH0, TSTORE, TLOAD
+[Shanghai]		PUSH0; possibly others, possibly precompiles
 
 Fork name		Gas changes
 ---------		-----------
@@ -61,7 +61,7 @@ London			Creations revert on return if created starts w/ 0xef
 Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
-[Shanghai]		Initcode limit; EOFv1
+[Shanghai]		Initcode limit; withdrawals as operations; poss more
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
