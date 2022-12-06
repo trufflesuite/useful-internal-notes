@@ -6,5 +6,8 @@ a nonce is incremented when:
 	[as of Spurious Dragon! false before!]
 	[and this can be reverted by a containing stackframe]
 
+NOTE: If a CREATE or CREATE2 instareverts, that might not increment the nonce??
+TODO
+
 Note: Remember that storage address is what has nonce incremented, relevant for
 DELEGATECALL or CALLCODE!
