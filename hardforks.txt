@@ -20,6 +20,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
 [Shanghai]		PUSH0
+[Cancun]		DATAHASH & prec, maybe TSTORE/TLOAD & more precompiles
 
 Fork name		Gas changes
 ---------		-----------
@@ -41,6 +42,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			none
 [Shanghai]		Increased gas for initcode; warm coinbase
+[Cancun]		None
 
 Fork name		Other changes
 ---------		-------------
@@ -62,6 +64,7 @@ Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
 [Shanghai]		Initcode limit; withdrawals as operations; maybe EOF
+[Cancun]		Shard blob txs
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
@@ -83,6 +86,7 @@ Arrow Glacier
 Gray Glacier
 Paris
 [Shanghai]
+[Cancun]
 
 Changes made without a hardfork
 -------------------------------
