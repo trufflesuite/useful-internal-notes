@@ -95,4 +95,4 @@ EIP 3607: reject transactions from accounts with code
 
 Future hardforks will (ordinarily) be named after Devcon locations
 
-So: Cancun, Prague, Osaka, Bogota
+So: Prague, Osaka, Bogota
