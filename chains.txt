@@ -8,8 +8,6 @@ or better yet, https://etherscan.io/eaas
 Sourcify's supported chains:
 https://github.com/ethereum/sourcify/blob/master/services/core/src/sourcify-chains.ts
 or here: https://docs.sourcify.dev/docs/chains/
-Subscan: https://www.subscan.io/network_list
-(or just https://www.subscan.io/ and click on "networks" up top)
 
 Note: sourcify chains marked with + before chainID are still in staging,
 not yet on master; other notes marked with + mean something similar
@@ -89,6 +87,7 @@ chainID		name			networkID
 336		astar shiden		336
 8217		klaytn cypress		8217
 1001		klaytn baobab		1001
++7001		zetachain athens	7001
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
@@ -186,6 +185,9 @@ chainId		name			networkID	subdomain
 aptoscan.com is ignored as it isn't EVM and doesn't allow verification
 
 ---what about subscan?
+
+Subscan: https://www.subscan.io/network_list
+(or just https://www.subscan.io/ and click on "networks" up top)
 
 chainId		name			networkID	subdomain
 592		astar			592		astar
@@ -302,7 +304,10 @@ novascan.io
 
 not sure verification works; not sure the API is documented at all
 
----ignore stuff below, we're not doing blockscout
+---ignore stuff below, we're not doing blockscout (yet! we might now!)
+
+we might want to source blockscout networks from chains.json, that is likely
+the easiest way (in addition to blockscout's main website, I guess)
 
 blockscout currently supports:
 chainID	name			networkID	suffix
