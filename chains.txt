@@ -34,10 +34,11 @@ chainID		name			networkID
 62320		celo baklava		62320
 43113		avalanche fuji		43113 [used to be 1!]
 43114		avalanche mainnet	43114
-11111		wagmi (avalanche)	11111
-53935		dfk (avalanche)		53935
-335		dfk test (avalanche)	335
-432201		dexalot (avalanche)	432201
+11111		wagmi (avax)		11111
+53935		dfk (avax)		53935
+335		dfk test (avax)		335
+432201		dexalot test (avax)	432201 //+relabel this, I mislabled it
++432204		dexlaot (avax)		432204
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611 [can't add to, but still there!]
 421613		arbitrum goerli		421613
