@@ -89,6 +89,8 @@ chainID		name			networkID
 8217		klaytn cypress		8217
 1001		klaytn baobab		1001
 +7001		zetachain athens	7001
++42262		oasis emerald		42262
++42261		oasis emerald testnet	42261
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
