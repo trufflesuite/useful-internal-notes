@@ -19,8 +19,7 @@ London			BASEFEE
 Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
-[Shanghai]		PUSH0 & maybe: RJUMP, RJUMPI, RJUMPV, CALLF, RETF, JUMPF
-[Cancun]		DATAHASH & prec, maybe TSTORE/TLOAD & more precompiles
+[Shanghai]		PUSH0
 
 Fork name		Gas changes
 ---------		-----------
@@ -42,7 +41,6 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			none
 [Shanghai]		Increased gas for initcode; warm coinbase
-[Cancun]		None
 
 Fork name		Other changes
 ---------		-------------
@@ -63,8 +61,7 @@ London			Creations revert on return if created starts w/ 0xef
 Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
-[Shanghai]		Initcode limit; withdrawals as operations; maybe EOF
-[Cancun]		Shard blob txs
+[Shanghai]		Initcode limit; withdrawals as operations
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
@@ -86,7 +83,6 @@ Arrow Glacier
 Gray Glacier
 Paris
 [Shanghai]
-[Cancun]
 
 Changes made without a hardfork
 -------------------------------
@@ -95,4 +91,4 @@ EIP 3607: reject transactions from accounts with code
 
 Future hardforks will (ordinarily) be named after Devcon locations
 
-So: Prague, Osaka, Bogota
+So: Cancun, Prague, Osaka, Bogota
