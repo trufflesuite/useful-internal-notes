@@ -36,9 +36,9 @@ chainID		name			networkID
 43114		avalanche mainnet	43114
 11111		wagmi (avax)		11111
 53935		dfk (avax)		53935
-335		dfk test (avax)		335
-432201		dexalot test (avax)	432201 //+relabel this, I mislabled it
-+432204		dexlaot (avax)		432204
+335		dfk testnet (avax)		335
+432204		dexalot (avax)		432204
+432201		dexalot testnet (avax)	432201
 42161		arbitrum mainnet	42161
 421611		arbitrum rinkeby	421611 [can't add to, but still there!]
 421613		arbitrum goerli		421613
@@ -88,9 +88,10 @@ chainID		name			networkID
 336		astar shiden		336
 8217		klaytn cypress		8217
 1001		klaytn baobab		1001
-+7001		zetachain athens	7001
-+42262		oasis emerald		42262
-+42261		oasis emerald testnet	42261
+7001		zetachain athens	7001
+42262		oasis emerald		42262
+42261		oasis emerald testnet	42261
+23295		oasis sapphire testnet	23295
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
