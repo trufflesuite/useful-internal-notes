@@ -93,6 +93,7 @@ chainID		name			networkID
 42261		oasis emerald testnet	42261
 23295		oasis sapphire testnet	23295 [can't add to, but still there!]
 +14		flare			14
++19		songbird canary		19
 
 etherscan currently supports:
 [not counting things like binance that are on a different domain; see below for
