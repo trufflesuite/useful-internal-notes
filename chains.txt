@@ -97,7 +97,7 @@ chainID		name			networkID
 19		songbird canary (flare)	19
 2047		stratos testnet		2047
 
-etherscan currently supports:
+etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
 those]
 chainID		name			networkID	subdomain
@@ -108,7 +108,7 @@ chainID		name			networkID	subdomain
 42		kovan			42		kovan
 11155111	sepolia			11155111	sepolia
 10		optimism mainnet	10		optimistic
-69		optimism kovan		69		kovan-optimistic
+#69		optimism kovan		69		kovan-optimistic
 420		optimism goerli		420		goerli-optimism [!]
 
 etherscan once had morden on testnet.etherscan.io, but I'm not sure it had
@@ -129,11 +129,11 @@ chainID		name			networkID	subdomain
 137		polygon mainnet		137		[none]
 80001		polygon mumbai		80001		mumbai
 
-etherscan's arbiscan.io supports:
+etherscan's arbiscan.io supports: [# indicates removed]
 chainID		name			networkID	subdomain
 42161		arbitrum one		42161		[none]
 42170		arbitrum nova		42170		nova
-421611		arbitrum rinkeby	421611		testnet [!]
+#421611		arbitrum rinkeby	421611		testnet [!]
 421613		arbitrum goerli		421613		goerli
 
 etherscan's snowtrace.io supports:
@@ -141,7 +141,7 @@ chainID		name			networkID	subdomain
 43114		avalanche mainnet	43114		[none]
 43113		avalanche fuji		43113 [not 1!]	testnet [!]
 
-etherscan's hecoinfo.com supports:
+etherscan's hecoinfo.com supports: [NOW DEFUNCT BUT TAKEN OVER BY EQUIVALENT??]
 chainID		name			networkID	subdomain
 128		heco mainnet		128		[none]
 256		heco testnet		256		testnet
@@ -167,7 +167,7 @@ chainId		name			networkID	subdomain
 199		bttc mainnet		199		[none]
 1029		bttc donau		1029		testnet [!]
 
-etherscan's aurorascan.dev supports:
+etherscan's aurorascan.dev supports: [NOW DEFUNCT; TAKEN OVER BY BLOCKSCOUT]
 chainId		name			networkID	subdomain
 1313161554	aurora			1313161554	[none]
 1313161555	aurora testnet		1313161555	testnet
@@ -184,7 +184,8 @@ chainId		name			networkID	subdomain
 etherscan's bobascan.com supports:
 chainId		name			networkID	subdomain
 288		boba mainnet		288		[none]
-28		boba rinkeby		28		testnet [!]
+#28		boba rinkeby		28		testnet [!]
+2888		boba goerli		28		testnet [!]
 
 etherscan's gnosisscan.io supports:
 chainId		name			networkID	subdomain
