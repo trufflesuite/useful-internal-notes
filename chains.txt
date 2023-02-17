@@ -91,7 +91,7 @@ chainID		name			networkID
 7001		zetachain athens	7001
 42262		oasis emerald		42262
 42261		oasis emerald testnet	42261
-+23294		oasis sapphire		23294
+23294		oasis sapphire		23294
 23295		oasis sapphire testnet	23295
 14		flare			14
 19		songbird canary (flare)	19
