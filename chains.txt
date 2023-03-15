@@ -1,5 +1,5 @@
 useful lists, note no guarantee any of these are fully up to date:
-https://github.com/ethereum/sourcify/blob/master/services/core/src/chains.json
+https://github.com/ethereum/sourcify/blob/staging/src/chains.json
 https://chainlist.org/
 https://chainid.network/chains.json
 
@@ -96,6 +96,8 @@ chainID		name			networkID
 14		flare			14
 19		songbird canary (flare)	19
 2047		stratos testnet		2047
+84531		base goerli		84531
+641230		bear mainnet		641230
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
@@ -190,6 +192,11 @@ chainId		name			networkID	subdomain
 etherscan's gnosisscan.io supports:
 chainId		name			networkID	subdomain
 100		gnosis			100		[none]
+
+etherscan's basescan.org supports:
+chainId		name			networkID	subdomain
+//NO mainnet yet!!
+84531		goerli			84531		goerli
 
 aptoscan.com is ignored as it isn't EVM and doesn't allow verification
 
