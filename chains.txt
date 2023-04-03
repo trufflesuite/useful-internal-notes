@@ -130,6 +130,8 @@ etherscan's polygonscan.com supports:
 chainID		name			networkID	subdomain
 137		polygon mainnet		137		[none]
 80001		polygon mumbai		80001		mumbai
+1101		polygon zkevm mainnet	1101		zkevm
+1442		polygon zkevm testnet	1442		testnet-zkevm
 
 etherscan's arbiscan.io supports: [# indicates removed]
 chainID		name			networkID	subdomain
