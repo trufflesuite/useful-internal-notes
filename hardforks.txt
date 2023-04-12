@@ -19,7 +19,7 @@ London			BASEFEE
 Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
-[Shanghai]		PUSH0
+Shanghai		PUSH0
 
 Fork name		Gas changes
 ---------		-----------
@@ -40,7 +40,7 @@ London			Rework transaction fees; reduce refund cap
 Arrow Glacier		none
 Gray Glacier		none
 Paris			none
-[Shanghai]		Increased gas for initcode; warm coinbase
+Shanghai		Increased gas for initcode; warm coinbase
 
 Fork name		Other changes
 ---------		-------------
@@ -61,7 +61,7 @@ London			Creations revert on return if created starts w/ 0xef
 Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
-[Shanghai]		Initcode limit; withdrawals as operations
+Shanghai		Initcode limit; withdrawals as operations
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
@@ -82,7 +82,7 @@ London			Solidity
 Arrow Glacier
 Gray Glacier
 Paris			Solidity
-[Shanghai]
+Shanghai
 
 Changes made without a hardfork
 -------------------------------
