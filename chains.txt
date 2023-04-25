@@ -98,6 +98,8 @@ chainID		name			networkID
 2047		stratos testnet		2047
 84531		base goerli		84531
 641230		bear mainnet		641230
++888		wanchain		888
++999		wanchain testnet	999
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
