@@ -4,6 +4,8 @@ And EVM version??
 meanwhile it's non-GraphQL api is similar to etherscan's but a bit different and
 is described below
 
+https://[stuff]/api?module=contract&action=getsourcecode&address=[address]
+
 blockscout error case: (seems to sometimes happen for no reason?)
 (a good reason not to turn this on by default :P )
 {
@@ -32,6 +34,7 @@ oh wait it changed looks liked?? looks like now it's just
 }
 
 wait!! it's inconsistent! both behaviors exist, dear god >_>
+[let's assume it's the latter]
 
 blockscout single source case:
 {
@@ -82,7 +85,7 @@ blockscout JSON case: I couldn't get this to work! TODO
 (why do I suspect it's coerced into the format below, which is no good...?)
 (I couldn't get this to work even for normal compiler settings, note)
 
-blockscout metadata-and-sources case: (UH-OH, NO GOOD)
+blockscout metadata-and-sources case:
 [but in this case, it also gets verified on Sourcify, so...]
 {
   message: "OK",
@@ -112,3 +115,18 @@ blockscout metadata-and-sources case: (UH-OH, NO GOOD)
 }
 UH-OH, METADATA IS MISSING
 I did this with debug revert strings on and that's not reflected here!!
+
+NOTE: they have fixed this now, but it looks like it's only fixed for *new*
+contracts... oh well
+
+need to retest!  only can't do so on sokol :(
+fortunately they support goerli now, whew
+
+OK!  There's now (sometimes) a CompilerSettings field.  it is JSON thankfully
+and not stringly typed!  WORTH NOTING: it includes everything! in particular,
+it includes "libraries" and "outputSelection" fields.  no idea if it includes
+modelCheckerSettings. :P
+
+Note that CompilerSettings is *not* always present!
+
+OMG -- Blockscout now supports *Yul*?? O_o  will have to test that out
