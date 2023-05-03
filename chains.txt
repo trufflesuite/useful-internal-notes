@@ -84,6 +84,7 @@ chainID		name			networkID
 420420		kekchain		103090 (!)
 420666		kekchain testnet	1 (!)
 7700		canto			7700
++7701		canto testnet		7701
 592		astar			592
 336		astar shiden		336
 8217		klaytn cypress		8217
