@@ -103,6 +103,7 @@ chainID		name			networkID
 +999		wanchain testnet	999
 +7668		root mainnet		7668
 +7672		root porcini		7672
++295		hedera mainnet		295
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
