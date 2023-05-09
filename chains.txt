@@ -84,7 +84,7 @@ chainID		name			networkID
 420420		kekchain		103090 (!)
 420666		kekchain testnet	1 (!)
 7700		canto			7700
-+7701		canto testnet		7701
+7701		canto testnet		7701
 592		astar			592
 336		astar shiden		336
 8217		klaytn cypress		8217
@@ -99,11 +99,11 @@ chainID		name			networkID
 2047		stratos testnet		2047
 84531		base goerli		84531
 641230		bear mainnet		641230
-+888		wanchain		888
-+999		wanchain testnet	999
-+7668		root mainnet		7668
-+7672		root porcini		7672
-+295		hedera mainnet		295
+888		wanchain		888
+999		wanchain testnet	999
+7668		root mainnet		7668
+7672		root porcini		7672
+295		hedera mainnet		295
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
