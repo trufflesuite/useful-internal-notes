@@ -82,7 +82,7 @@ London			Solidity
 Arrow Glacier
 Gray Glacier
 Paris			Solidity
-Shanghai
+Shanghai		Solidity
 
 Changes made without a hardfork
 -------------------------------
