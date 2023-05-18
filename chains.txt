@@ -110,10 +110,10 @@ etherscan supports: [# indicates removed]
 those]
 chainID		name			networkID	subdomain
 1		mainnet			1		[none]
-3		ropsten			3		ropsten
-4		rinkeby			4		rinkeby
+#3		ropsten			3		ropsten
+#4		rinkeby			4		rinkeby
 5		goerli			5		goerli
-42		kovan			42		kovan
+#42		kovan			42		kovan
 11155111	sepolia			11155111	sepolia
 10		optimism mainnet	10		optimistic
 #69		optimism kovan		69		kovan-optimistic
