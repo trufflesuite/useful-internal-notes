@@ -77,12 +77,13 @@ Constantinople		Solidity, Vyper
 Petersburg		Solidity, Vyper
 Istanbul		Solidity, Vyper
 Muir Glacier		
-Berlin			Solidity
+Berlin			Solidity, Vyper
 London			Solidity
 Arrow Glacier
 Gray Glacier
-Paris			Solidity
-Shanghai		Solidity
+Paris			Solidity, Vyper
+Shanghai		Solidity, Vyper
+[Cancun]		Vyper
 
 Changes made without a hardfork
 -------------------------------
