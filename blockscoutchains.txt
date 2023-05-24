@@ -1,0 +1,181 @@
+https://docs.blockscout.com/about/projects
+(...plus chains.json...)
+
+> means not in chainlist or sourcify's chains.json
+~ means conflicts with something in such
+% means bad cert (didn't note this if went in unknown networks bucket)
+
+known networks:
+chainID	name			networkID	url
+1	mainnet			1		eth.blockscout.com
+5	goerli			5		eth-goerli.blockscout.com
+61	ethereum classic	1 (!)		blockscout.com/etc/mainnet
+63	ethereum classic mordor	7 (!)		blockscout.com/etc/mordor
+6	ethereum classic kotti	6		blockscout.com/etc/kotti
+100	gnosis			100		blockscout.com/xdai/mainnet
+10200	gnosis chiado		10200		blockscout.com/gnosis/chiado
+592	astar			592		blockccout.com/astar
+336	astar shiden		592		blockscout.com/shiden
+~81	astar shibuya		81		blockscout.com/shibuya
+10	optimism		10		blockscout.com/optimism/mainnet
+420	optimism goerli		420		blockscout.com/optimism/goerli
+99	poa core		99		blockscout.com/poa/core
+77	poa sokol		77		blockscout.com/poa/sokol
+246529	ARTIS sigma1		246529		blockscout.com/artis/sigma1
+~22	LUKSO L14		22		blockscout.com/lukso/l14
+30	RSK mainnet		30		blockscout.com/rsk/mainnet
+
+42220	celo mainnet		42220		explorer.celo.org/mainnet
+44787	celo alfajores		44787		explorer.celo.org/alfajores
+62320	celo baklava		62320		explorer.celo.org/baklava
+>17323	celo cannoli		17323		explorer.celo.org/cannoli
+820	callisto		1 (!)		callisto.network
+11297108109	palm		11297108109	explorer.palm.io
+11297108099	palm testnet	11297108099	explorer.palm-uat.xyz
+122	fuse			122		explorer.fuse.io
+14	flare mainnet		14		flare-explorer.flare.network
+19	flare songbird		19		songbird-explorer.flare.network
+16	flare coston		16		coston-explorer.flare.network
+114	flare coston2		114		coston2-explorer.flare.network
+2046399126	skale europa	2046399126	elated-tan-skat.explorer.mainnet.skalenodes.com
+42262	oasis emerald		42262		explorer.emerald.oasis.dev
+2009	cloudwalk mainnet	2009		explorer.mainnet.cloudwalk.io
+2008	cloudwalk testnet	2008		explorer.testnet.cloudwalk.io
+
+416	sx			416		explorer.sx.technology
+2000	dogechain		2000		explorer.dogechain.dog
+568	dogechain testnet	568		exporer-testnet.dogechain.dog
+
+42170	arbitrum nova		42170		nova-explorer.arbitrum.io
+1088	metis andromeda		1088		andromeda-explorer.metis.io
+599	metis goerli		599		goerli.explorer.metisdevops.link
+43288	avalanche boba		43288	blockexplorer.avax.boba.network
+4328	avalanche bobafuji 	4328	blockexplorer.testnet.avax.boba.network
+56288	binance boba		56288	blockexplorer.bnb.boba.network
+9728	binance boba testnet	9728	blockexplorer.testnet.bnb.boba.network
+1294	bobabeam		1294	blockexplorer.bobabeam.boba.network
+1297	bobabase		1297	blockexplorer.bobabase.boba.network
+301	bobaopera		301	blockexplorer.bobaopera.boba.network
+4051	bobaopera testnet	4051	blockexplorer.testnet.bobaopera.boba.network
+5551	nahmii			5551		explorer.nahmii.io
+534353	scroll alpha testnet	534353		blockscout.scroll.io
+1000	GTON			1000		explorer.gton.network
+50021	GTON testnet		50021		explorer.testnet.gton.network
+>719	shib testnet		719		puppyscan.shib.io
+
+1284	moonbeam	1284	blockscout.moonbeam.network
+1285	moonriver	1285	blockscout.moonriver.moonbeam.network
+1287	moonbase alpha	1287	moonbase-blockscout.testnet.moonbeam.network
+787	acala		787	blockscout.acala.network
+595	acala mandala	595	blockscout.mandala.acala.network
+686	karura		686	blockscout.karura.network
+2021	edgeware	2021	edgscan.live
+2109	exosama		2109	explorer.exosama.com
+
+25	cronos			25	cronos.org/explorer
+9001	evmos			9001	blockscout.evmos.org
+9000	evmos testnet		9000	evm.evmos.dev
+2222	kava			2222	explorer.kava.io
+2221	kava testnet		2221	explorer.testnet.kava.io
+7700	canto			7700	evm.explorer.canto.io
+7701	canto testnet		7701	testnet.tuber.build
+2569	techpay			2569	tpcscan.com
+>10687	point			10687	explorer.pointnetwork.io
+113	dehvo			dehvo	explorer.dehvo.com
+
+57	syscoin			57	explorer.syscoin.org
+5700	syscoin tanenbaum	5700	tanenbaum.io
+20	elastos			20	eth.elastos.io
+21	elastos testnet		21	esc-testnet.elastos.io
+10000	smartBCH (aka sonar?)	10000	sonar.cash
+
+1313161554	aurora		1313161554	explorer.mainnet.aurora.dev
+1313161555	aurora testnet	1313161555	explorer.testnet.aurora.dev
+106	velas			106	evmexplorer.velas.com
+~111(!)	velas testnet		111	evmexplorer.testnet.velas.com
+1234	step			1234	stepscan.io
+12345	step testnet		12345	testnet.stepscan.io
+2001	milkomeda c1	2001	explorer-mainnet-cardano-evm.c1.milkomeda.com
+200101	milkomeda c1 testnet	200101	explorer-devnet-cardano-evm.c1.milkomeda.com
+6969	tombchain		6969	tombscout.com
+>16350	meta apes		16350	explorer.bas.metaapesgame.com
+
+246	energyweb		246		explorer.energyweb.org
+73799	energyweb volta		73799		volta-explorer.energyweb.org
+321	kucoin			321		scan.kcc.io
+10946	quadrans		10946		explorer.quadrans.io
+10947	quadrans testnet	10947		explorer.testnet.quadrans.io
+1313114	etho			1313114		explorer.ethoprotocol.com
+32520	bitgert			32520		brisescan.com
+813	qitmeer			813		qng.meerscan.io
+8131	qitmeer testnet		8131		qng-testnet.meerscan.io
+144	phi v2			144		phiscan.com
+39797	energi			39797		explorer.energi.network
+15551	loop			15551		explorer.mainnetloop.com
+>14441	loop testnet		14441		explorer.testnetloop.com
+1994	ekta			1994		ektascan.io
+62621	multivac		62621		mtvscout.com
+~21 (!)	morpher			21		scan.morpher.com
+7341	shyft			7341		bx.veriscope.network
+1987	ethergem		1987		blockscout.egem.io
+2152	findora			2152		evm.findorascan.io
+2153	findora anvil		2153		testnet-anvil.evm.findorascan.io
+134	iexec			134		blockscout-bellecour.iex.ec
+96	bitkub			96		www.bkcscan.com
+25925	bitkub testnet		25925		testnet.bkcscan.com
+1433	rikeza			1433		rikscan.com
+3797	alveychain		3797		alveyscan.com
+20001	camelark		20001		scan.camelark.com
+>20531812	tecra space	20531812	explorer.tecra.space
+8888	xana			8888		xanachain.xana.net
+1620	atheios			1620		explorer.atheios.org
+5197	eraswap			5197		eraswap.info
+248	oasys			248		scan.oasys.games
+47805	rei			47805		scan.rei.network
+~%2047	intchain		2047		blockscout.explorer.intchain.io
+73927	mixin			73927		scan.mvm.dev
+111	etherlite		111		explorer.etherlite.org
+955305	content fabric		955305		exp.contentfabric.io
+119	enuls			119		evmscan.nuls.io
+120	enuls testnet		120		beta.evmscan.nuls.io
+3737	crossbell		3737		scan.crossbell.io
+~500	hyperon			500		hyperonscan.com
+
+84531	base goerli		84531		base-goerli.blockscout.com
+1442	polygon zkevm testnet	1442		explorer.public.zkevm-test.net
+59140	linea goerli		59140		explorer.goerli.linea.build
+5001	mantle testnet		5001		explorer.testnet.mantle.xyz
+280	zksync era goerli	280		zksync2-testnet.zkscan.io
+~9999	peaq agung		9999		scout.agung.peaq.network
+943	pulsechain testnet v4	943		scan.v4.testnet.pulsechain.com
+4918	venidium testnet	4918		evm-testnet.venidiumexplorer.com
+88880	chiliz scoville		88880		scoville-explorer.chiliz.com
+647	sx toronto		647		explorer.toronto.sx.technology
+1662	horizen yuma		1662		yuma-explorer.horizen.io
+5758	satoshichain 		5758		satoshiscan.io
+>7649	lamina1 testnet		7649		testnet-explorer.lamina1.global
+
+unknown networks:
+name			url					chain	net
+optimism bedrock beta	blockscout.com/optimism/bedrock-beta	???	???
+optimism opcraft	blockscout.com/optimism/opcraft		???	???	
+chiliz mainnet		explorer.chiliz.com			???	???
+polygon edge		explorer-edgenet.polygon.technology	???	???
+poochain		blockscout.pooscan.co:4000		???	???
+chainers		explorer.chainers.io			???	???
+techpay testnet		test.tpcscan.com			>2479	???
+loom basechain		basechain-blockexplorer.dappchains.com	???	???
+findora QA01		dev-qa01-blockscout.dev.findora.org	???	???
+lacchain		explorer.lacchain.net			???	???
+token x			scan.tokenx.finance			???	???
+token x bangsue		bangsue-scan.tokenx.finance		???	???
+myvee			myveescan.com				???	???
+qiyihuo			explorer.qiyihuo.com			~10001?	???
+futurefi		fufiscan.com				???	???
+peopledc violin		violins.peopledc.cn			???	???
+keeex			blk.keeex.me				???	???
+global digital cluster coin	www.gdccscan.io			???	???
+mitgate			explorer.mitgate.com			???	???
+lachain devnet		scan-dev.lachain.io			???	???
+horizen dune		dune-explorer.horizen.io		>1661	???
+numblock testnet	testnet.numblock.org			???	???

@@ -328,7 +328,7 @@ novascan.io
 
 not sure verification works; not sure the API is documented at all
 
----ignore stuff below, we're not doing blockscout (yet! we might now!)
+---following stuff is outdated, see blockscoutchains.txt for up-to-date
 
 we might want to source blockscout networks from chains.json, that is likely
 the easiest way (in addition to blockscout's main website, I guess)
