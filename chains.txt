@@ -11,20 +11,21 @@ or here: https://docs.sourcify.dev/docs/chains/
 
 Note: sourcify chains marked with + before chainID are still in staging,
 not yet on master; other notes marked with + mean something similar
+# means it's been "removed" (although note removed chains are still accessible)
 
 sourcify currently supports:
 chainID		name			networkID
 1		mainnet			1
-3		ropsten			3 [can't add to, but still there!]
-4		rinkeby			4
-42		kovan			42 [can't add to, but still there!]
+#3		ropsten			3
+#4		rinkeby			4
+#42		kovan			42
 5		goerli			5
 11155111	sepolia			11155111
 100		gnosis			100
 10200		gnosis chiado		10200
-300		optimism on gnosis	300
-99		poa core		99
-77		poa sokol		77
+#300		optimism on gnosis	300
+#99		poa core		99
+#77		poa sokol		77
 56		binance mainnet		56
 97		binance testnet		97
 137		polygon mainnet		137
@@ -40,21 +41,21 @@ chainID		name			networkID
 432204		dexalot (avax)		432204
 432201		dexalot testnet (avax)	432201
 42161		arbitrum mainnet	42161
-421611		arbitrum rinkeby	421611 [can't add to, but still there!]
+#421611		arbitrum rinkeby	421611
 421613		arbitrum goerli		421613
 40		telos mainnet		40
 41		telos testnet		41
 8		ubiq			8 [used to be 88]
 311752642	oneledger mainnet	311752642
-4216137055	oneledger frankenstein	4216137055
+#4216137055	oneledger frankenstein	4216137055
 57		syscoin	mainnet		57
 5700		syscoin tanenbaum	5700
 10		optimistic mainnet	10
-69		optimistic kovan	69 [can't add to, but still there!]
+#69		optimistic kovan	69
 420		optimistic goerli	420
-28528		optimism bedrock goerli	28528
+#28528		optimism bedrock goerli	28528
 288		boba mainnet		288
-28		boba rinkeby		28
+#28		boba rinkeby		28
 106		velas			106
 82		meter			82
 83		meter testnet		83
@@ -66,26 +67,26 @@ chainID		name			networkID
 1287		moonbase alpha		1287
 11297108109	palm mainnet		11297108109
 11297108099	palm testnet		11297108099
-43		darwinia pangolin	43
+#43		darwinia pangolin	43
 44		darwinia crab		44
 9001		evmos mainnet		9001
 9000		evmos testnet		9000
 62621		multivac		62621
-534		candle			534
+#534		candle			534
 192837465	gather mainnet		192837465
-486217935	gather devnet		486217935
+#486217935	gather devnet		486217935
 356256156	gather testnet		356256156
 246		energy web		246
 73799		energy web volta	73799
 71402		godwoken mainnet	71402
 71401		godwoken testnet	71401
-103090		crystaleum		1 (!)
+#103090		crystaleum		1 (!)
 51		xinfin apothem		51
 420420		kekchain		103090 (!)
 420666		kekchain testnet	1 (!)
 7700		canto			7700
 7701		canto testnet		7701
-592		astar			592
+#592		astar			592
 336		astar shiden		336
 8217		klaytn cypress		8217
 1001		klaytn baobab		1001
@@ -94,7 +95,7 @@ chainID		name			networkID
 42261		oasis emerald testnet	42261
 23294		oasis sapphire		23294
 23295		oasis sapphire testnet	23295
-14		flare			14
+#14		flare			14
 19		songbird canary (flare)	19
 2047		stratos testnet		2047
 84531		base goerli		84531
@@ -104,6 +105,8 @@ chainID		name			networkID
 7668		root mainnet		7668
 7672		root porcini		7672
 295		hedera mainnet		295
+1149		symplexia		1149
+2000		dogechain		2000
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
