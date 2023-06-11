@@ -20,6 +20,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
 Shanghai		PUSH0
+[Cancun]		T(LOAD/STORE), BLOBHASH, MCOPY; precompiles 0x14?, 0x-3?
 
 Fork name		Gas changes
 ---------		-----------
@@ -41,6 +42,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			none
 Shanghai		Increased gas for initcode; warm coinbase
+[Cancun]		none
 
 Fork name		Other changes
 ---------		-------------
@@ -62,6 +64,7 @@ Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
 Shanghai		Initcode limit; withdrawals as operations
+[Cancun]		SELFDESTRUCT limited to same tx
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
@@ -92,4 +95,4 @@ EIP 3607: reject transactions from accounts with code
 
 Future hardforks will (ordinarily) be named after Devcon locations
 
-So: Cancun, Prague, Osaka, Bogota
+So: Prague, Osaka, Bogota
