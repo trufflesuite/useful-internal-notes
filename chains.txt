@@ -107,11 +107,11 @@ chainID		name			networkID
 295		hedera mainnet		295
 1149		symplexia		1149
 2000		dogechain		2000
-+167005		taiko testnet alpha-3	176005
-+1339		elysium mainnet		1339
-+25		cronos			25
-+96		bitkub			96
-+25925		bitkub testnet		25925
+167005		taiko testnet alpha-3	176005
+1339		elysium mainnet		1339
+25		cronos			25
+96		bitkub			96
+25925		bitkub testnet		25925
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
