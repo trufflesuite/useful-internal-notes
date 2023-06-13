@@ -20,7 +20,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
 Shanghai		PUSH0
-[Cancun]		T(LOAD/STORE), BLOBHASH, MCOPY; precompiles 0x14?, 0x-3?
+[Cancun]		T(LOAD/STORE), BLOBHASH, MCOPY; precompiles 0x0a-0x0b(?)
 
 Fork name		Gas changes
 ---------		-----------
