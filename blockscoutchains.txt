@@ -4,6 +4,7 @@ https://docs.blockscout.com/about/projects
 > means not in chainlist or sourcify's chains.json
 ~ means conflicts with something in such
 % means bad cert (didn't note this if went in unknown networks bucket)
++ means I need to add this to the source fetcher still
 
 known networks:
 chainID	name			networkID	url
@@ -24,6 +25,10 @@ chainID	name			networkID	url
 246529	ARTIS sigma1		246529		blockscout.com/artis/sigma1
 ~22	LUKSO L14		22		blockscout.com/lukso/l14
 30	RSK mainnet		30		blockscout.com/rsk/mainnet
+1890	lightlink phoenix	1890		phoenix.lightlink.io
+1891	lightlink pegasus	1891		pegasus.lightlink.io
+7001	zetachain athens	7001	zetachain-athens-2.blockscout.com
+245022926	neon devnet	245022926	devnet.neon.blockscout.com
 
 42220	celo mainnet		42220		explorer.celo.org/mainnet
 44787	celo alfajores		44787		explorer.celo.org/alfajores
@@ -154,6 +159,8 @@ chainID	name			networkID	url
 1662	horizen yuma		1662		yuma-explorer.horizen.io
 5758	satoshichain 		5758		satoshiscan.io
 >7649	lamina1 testnet		7649		testnet-explorer.lamina1.global
+167005	taiko alpha-3		167005		explorer.test.taiko.xyz
+5167003	mxc wannsee zkevm	5167003		wannsee-explorer.mxc.com
 
 unknown networks:
 name			url					chain	net
