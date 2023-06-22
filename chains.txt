@@ -112,6 +112,7 @@ chainID		name			networkID
 25		cronos			25
 96		bitkub			96
 25925		bitkub testnet		25925
++7777777	zora			7777777
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
