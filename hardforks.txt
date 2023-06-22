@@ -1,4 +1,4 @@
-https://github.com/ethereum/eth1.0-specs/blob/master/network-upgrades/mainnet-upgrades/
+https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades
 
 Fork name		Opcodes and precompiles added
 ---------		-----------------------------
@@ -58,13 +58,13 @@ Constantinople		Nothing I care about
 Petersburg		none
 Istanbul		none
 Muir Glacier		Nothing I care about
-Berlin			Typed transactions
-London			Creations revert on return if created starts w/ 0xef
+Berlin			Typed transactions; tx type 1
+London			Creations revert if created starts w/ 0xef; tx type 2
 Arrow Glacier		Nothing I care about
 Gray Glacier		Nothing I care about
 Paris			The merge! But nothing I care about
 Shanghai		Initcode limit; withdrawals as operations
-[Cancun]		SELFDESTRUCT limited to same tx
+[Cancun]		SELFDESTRUCT limited to same tx; tx type 3
 
 Fork name		Can be explicitly targeted by
 ---------		-----------------------------
