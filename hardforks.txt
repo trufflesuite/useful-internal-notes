@@ -10,7 +10,7 @@ DAO Fork		none
 Tangerine Whistle	none
 Spurious Dragon		none
 Byzantium		RETURNDATA*, STATICCALL, REVERT; precompiles 0x05-0x08
-Constantinople		Bitshifts, CREATE2, EXTCODEHASH
+Constantinople		SHL, SHR, SAR, CREATE2, EXTCODEHASH
 Petersburg		none
 Istanbul		CHAINID, SELFBALANCE; precompile 0x09
 Muir Glacier		none
@@ -20,7 +20,7 @@ Arrow Glacier		none
 Gray Glacier		none
 Paris			DIFFICULTY changed to PREVRANDAO
 Shanghai		PUSH0
-[Cancun]		T(LOAD/STORE), BLOBHASH, MCOPY; precompiles 0x0a-0x0b(?)
+[Cancun]		T(LOAD/STORE), BLOBHASH, MCOPY; precompiles 0x0a-0x0b
 
 Fork name		Gas changes
 ---------		-----------
