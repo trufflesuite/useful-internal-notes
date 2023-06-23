@@ -1,0 +1,37 @@
+Solidity; Solidity(Multi); Solidity(JSON); Vyper
+
+JSON presently does *not* allow Yul best I can tell!
+(this is unlike Blockscout)
+it *does* seem to allow SolidityAST :O
+(I assume that's unintentional)
+
+result -> 0 -> ...
+
+if it doesn't exist, SourceCode will be "" and ABI will be
+"Contract source code not verified"
+
+SourceCode		//source; or multiple sources; or full compiler input!
+ABI			//ignore
+ContractName		//can use for path, I guess
+CompilerVersion		//version
+OptimizationUsed	//settings [not in JSON case]
+Runs			//settings [not in JSON case]
+ConstructorArguments	//ignore!
+EVMVersion		//settings; may be "Default" [basic case only]
+Library			//settings [not in JSON case]
+LicenseType		//ignore
+Proxy			//ignore
+Implementation		//ignore
+SwarmSource		//ignore
+
+note: Libraries in Library are separated by semicolons, with library name
+separated from the address by a colon
+
+multiple sources:
+has same format as sources object for compiler input
+
+compiler input:
+language: //ignore
+sources: //sources! each has a name, each has a content field
+settings: //settings!
+outputSelection //ignore
