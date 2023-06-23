@@ -6,6 +6,8 @@ is described below
 
 https://[stuff]/api?module=contract&action=getsourcecode&address=[address]
 
+NOTE: JSON case allows Yul!  But does not seem to allow SolidityAST, thankfully
+
 blockscout error case: (seems to sometimes happen for no reason?)
 (a good reason not to turn this on by default :P )
 {
@@ -41,13 +43,13 @@ blockscout single source case:
   message: "OK",
   status: "1",
   result: [{
-    ABI: string; //(JSON)
+    ABI: string; //(JSON) [is JSON-ified null for Yul case!]
     CompilerVersion: string;
     ConstructorArguments?: string; //no leading 0x, excluded if empty
     ContractName: string;
     EVMVersion: string | null; //uses "default", lowercase, but can be null...?
     ExternalLibraries?: { //not stringly-typed, thank god!
-      address_hash: string; //address
+      address_hash: string; //address, checksummed
       name: string;
     }[]; //not included if there are none
     FileName: "";
@@ -57,7 +59,7 @@ blockscout single source case:
 	//altogether if optimization not used)
     OptimizationUsed: string; //"true" or "false" (!)
     SourceCode: string; //note: there's no header unlike w/Etherscan
-    Address: string;
+    Address: string; //not checksummed...
   }]
 }
 
