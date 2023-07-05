@@ -117,6 +117,7 @@ chainID		name			networkID
 57000		rollux tanenbaum	57000
 +6119		UPTN			6119
 +2222		kava mainnet		2222
++61		ethereum classic	1 (!)
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
