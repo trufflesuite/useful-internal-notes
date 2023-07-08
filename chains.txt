@@ -122,6 +122,7 @@ chainID		name			networkID
 +314		filecoin		314
 +32769		zilliqa			32769
 +33101		zilliqa testnet		33101
++111000		siberium testnet	111000
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
