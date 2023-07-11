@@ -1,14 +1,18 @@
-abi: //TODO
-additional_sources: //TODO
+https://.../api/v2/smart-contracts/<address>
+
+useful info here: https://github.com/blockscout/blockscout-api-v2-swagger/blob/main/swagger.yaml
+
+abi: string | null [have to parse]
+additional_sources: { file_path, source_code }[]
 can_be_visualized_vial_sol2uml: boolean
-compiler_settings: //TODO
+compiler_settings: object | null
 compiler_version: string
-constructor_args: //TODO
+constructor_args: string | null [appears to *include* 0x]
 creation_bytecode: string [includes 0x]
-decoded_constructor_args: //TODO
+decoded_constructor_args: array | null //don't bother with this...
 deployed_bytecode: string [includes 0x]
 evm_version: string (always? can't be null?)
-external_libraries: //TODO
+external_libraries: { name, address_hash }[]
 file_path: string [primary source name]
 is_changed_bytecode: boolean (???)
 is_fully_verified: boolean (???)
@@ -19,11 +23,11 @@ is_verified_via_eth_bytecode_db: boolean (?)
 is_verified_via_sourcify: boolean
 is_vyper_contract: boolean
 language: string (lowercased appears?)
-minimal_proxy_address_hash: ???
+minimal_proxy_address_hash: string | null [???]
 name: string [contract name]
 optimization_enabled: boolean
-optimization_runs: number | null [I assume?]
+optimization_runs: number | null
 source_code: string [primary source]
-sourcify_repo_url: string | null [I assume?]
+sourcify_repo_url: string | null
 verified_at: string
-verified_twin_address_hash: ???
+verified_twin_address_hash: string | null [???]
