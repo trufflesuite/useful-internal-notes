@@ -4,7 +4,7 @@ useful info here: https://github.com/blockscout/blockscout-api-v2-swagger/blob/m
 
 abi: string | null [have to parse]
 additional_sources: { file_path, source_code }[]
-can_be_visualized_vial_sol2uml: boolean
+can_be_visualized_via_sol2uml: boolean
 compiler_settings: object | null
 compiler_version: string
 constructor_args: string | null [appears to *include* 0x]
