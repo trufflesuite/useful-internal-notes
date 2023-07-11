@@ -13,22 +13,21 @@ chainID	name			networkID	url
 61	ethereum classic	1 (!)		blockscout.com/etc/mainnet
 63	ethereum classic mordor	7 (!)		blockscout.com/etc/mordor
 6	ethereum classic kotti	6		blockscout.com/etc/kotti
-100	gnosis			100		blockscout.com/xdai/mainnet
-10200	gnosis chiado		10200		blockscout.com/gnosis/chiado
-592	astar			592		blockccout.com/astar
+100	gnosis			100		gnosis.blockscout.com
+10200	gnosis chiado		10200		gnosis-chiado.blockscout.com
+592	astar			592		blockscout.com/astar
 336	astar shiden		592		blockscout.com/shiden
 ~81	astar shibuya		81		blockscout.com/shibuya
-10	optimism		10		blockscout.com/optimism/mainnet
-420	optimism goerli		420		blockscout.com/optimism/goerli
+10	optimism		10		optimism.blockscout.com
+420	optimism goerli		420		optimism-goerli.blockscout.com
 99	poa core		99		blockscout.com/poa/core
 77	poa sokol		77		blockscout.com/poa/sokol
-246529	ARTIS sigma1		246529		blockscout.com/artis/sigma1
 ~22	LUKSO L14		22		blockscout.com/lukso/l14
 30	RSK mainnet		30		blockscout.com/rsk/mainnet
 1890	lightlink phoenix	1890		phoenix.lightlink.io
 1891	lightlink pegasus	1891		pegasus.lightlink.io
 7001	zetachain athens	7001	zetachain-athens-2.blockscout.com
-245022926	neon devnet	245022926	devnet.neon.blockscout.com
+245022926	neon devnet	245022926	neon-devnet.blockscout.com
 
 42220	celo mainnet		42220		explorer.celo.org/mainnet
 44787	celo alfajores		44787		explorer.celo.org/alfajores
@@ -186,3 +185,6 @@ mitgate			explorer.mitgate.com			???	???
 lachain devnet		scan-dev.lachain.io			???	???
 horizen dune		dune-explorer.horizen.io		>1661	???
 numblock testnet	testnet.numblock.org			???	???
+
+worked when I first created this, now removed:
+246529	ARTIS sigma1		246529		blockscout.com/artis/sigma1

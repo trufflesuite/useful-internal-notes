@@ -1,0 +1,29 @@
+abi: //TODO
+additional_sources: //TODO
+can_be_visualized_vial_sol2uml: boolean
+compiler_settings: //TODO
+compiler_version: string
+constructor_args: //TODO
+creation_bytecode: string [includes 0x]
+decoded_constructor_args: //TODO
+deployed_bytecode: string [includes 0x]
+evm_version: string (always? can't be null?)
+external_libraries: //TODO
+file_path: string [primary source name]
+is_changed_bytecode: boolean (???)
+is_fully_verified: boolean (???)
+is_partially_verified: boolean (???)
+is_self_destructed: boolean (!)
+is_verified: boolean
+is_verified_via_eth_bytecode_db: boolean (?)
+is_verified_via_sourcify: boolean
+is_vyper_contract: boolean
+language: string (lowercased appears?)
+minimal_proxy_address_hash: ???
+name: string [contract name]
+optimization_enabled: boolean
+optimization_runs: number | null [I assume?]
+source_code: string [primary source]
+sourcify_repo_url: string | null [I assume?]
+verified_at: string
+verified_twin_address_hash: ???
