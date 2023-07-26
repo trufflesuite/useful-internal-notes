@@ -12,6 +12,7 @@ or here: https://docs.sourcify.dev/docs/chains/
 Note: sourcify chains marked with + before chainID are still in staging,
 not yet on master; other notes marked with + mean something similar
 # means it's been "removed" (although note removed chains are still accessible)
+> means it's not in Sourcify's chains.json
 
 sourcify currently supports:
 chainID		name			networkID
@@ -98,6 +99,7 @@ chainID		name			networkID
 #14		flare			14
 19		songbird canary (flare)	19
 2047		stratos testnet		2047
++8453		base mainnet		8453
 84531		base goerli		84531
 641230		bear mainnet		641230
 888		wanchain		888
@@ -123,6 +125,8 @@ chainID		name			networkID
 32769		zilliqa			32769
 33101		zilliqa testnet		33101
 111000		siberium testnet	111000
++22776		MAP mainnet		22776
++212		MAP Makalu		212
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
@@ -145,6 +149,7 @@ etherscan's bscscan.com supports:
 chainID		name			networkID	subdomain
 56		binance mainnet		56		[none]
 97		binance testnet		97		testnet
+>5611		opbnb testnet		5611		opbnb-testnet
 
 etherscan's ftmscan.com supports:
 chainID		name			networkID	subdomain
@@ -222,10 +227,15 @@ chainId		name			networkID	subdomain
 
 etherscan's basescan.org supports:
 chainId		name			networkID	subdomain
-//NO mainnet yet!!
-84531		goerli			84531		goerli
+8453		base			8453		[none]
+84531		base goerli		84531		goerli
 
 aptoscan.com is ignored as it isn't EVM and doesn't allow verification
+
+etherscan's lineascan.build supports:
+chainId		name			networkID	subdomain
+59144		linea			59144		[none]
+59140		linea goerli		59140		goerli
 
 ---what about subscan?
 
