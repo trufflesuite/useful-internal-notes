@@ -99,7 +99,7 @@ chainID		name			networkID
 #14		flare			14
 19		songbird canary (flare)	19
 2047		stratos testnet		2047
-+8453		base mainnet		8453
+8453		base mainnet		8453
 84531		base goerli		84531
 641230		bear mainnet		641230
 888		wanchain		888
@@ -125,8 +125,8 @@ chainID		name			networkID
 32769		zilliqa			32769
 33101		zilliqa testnet		33101
 111000		siberium testnet	111000
-+22776		MAP mainnet		22776
-+212		MAP Makalu		212
+22776		MAP mainnet		22776
+212		MAP Makalu		212
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
