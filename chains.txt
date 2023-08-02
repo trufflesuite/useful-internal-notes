@@ -98,7 +98,7 @@ chainID		name			networkID
 23295		oasis sapphire testnet	23295
 #14		flare			14
 19		songbird canary (flare)	19
-2047		stratos testnet		2047
+2047		stratos testnet mesos	2047
 8453		base mainnet		8453
 84531		base goerli		84531
 641230		bear mainnet		641230
@@ -122,11 +122,13 @@ chainID		name			networkID
 2221		kava testnet		2221
 61		ethereum classic	1 (!)
 314		filecoin		314
++314159		filecoin calibration	314159
 32769		zilliqa			32769
 33101		zilliqa testnet		33101
 111000		siberium testnet	111000
 22776		MAP mainnet		22776
 212		MAP Makalu		212
++2021		Edgeware EdgeEVM	2021
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
