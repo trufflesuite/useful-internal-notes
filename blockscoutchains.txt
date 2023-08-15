@@ -158,7 +158,7 @@ chainID	name			networkID	url
 1662	horizen yuma		1662		yuma-explorer.horizen.io
 5758	satoshichain 		5758		satoshiscan.io
 >7649	lamina1 testnet		7649		testnet-explorer.lamina1.global
-167005	taiko alpha-3		167005		explorer.test.taiko.xyz
+167005	taiko grimsvotn		167005		explorer.test.taiko.xyz
 5167003	mxc wannsee zkevm	5167003		wannsee-explorer.mxc.com
 
 unknown networks:

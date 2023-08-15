@@ -42,6 +42,7 @@ chainID		name			networkID
 432204		dexalot (avax)		432204
 432201		dexalot testnet (avax)	432201
 42161		arbitrum mainnet	42161
+42170		arbitrum nova		42170
 #421611		arbitrum rinkeby	421611
 421613		arbitrum goerli		421613
 40		telos mainnet		40
@@ -109,7 +110,8 @@ chainID		name			networkID
 295		hedera mainnet		295
 1149		symplexia		1149
 2000		dogechain		2000
-167005		taiko testnet alpha-3	176005
+167005		taiko grimsvotn		176005
+167006		taiko eldfell		176006
 1339		elysium mainnet		1339
 25		cronos			25
 96		bitkub			96
@@ -122,13 +124,15 @@ chainID		name			networkID
 2221		kava testnet		2221
 61		ethereum classic	1 (!)
 314		filecoin		314
-+314159		filecoin calibration	314159
+314159		filecoin calibration	314159
 32769		zilliqa			32769
 33101		zilliqa testnet		33101
 111000		siberium testnet	111000
 22776		MAP mainnet		22776
 212		MAP Makalu		212
-+2021		Edgeware EdgeEVM	2021
+2021		Edgeware EdgeEVM	2021
+250		fantom mainnet		250
+13337		beam testnet		13337
 
 etherscan supports: [# indicates removed]
 [not counting things like binance that are on a different domain; see below for
